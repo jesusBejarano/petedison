@@ -1,0 +1,1625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PET_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PET_DBEntities" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="USP_CONSULTA_ACTIVIDAD" ReturnType="Collection(PET_DBModel.USP_CONSULTA_ACTIVIDAD_Result)">
+      <Parameter Name="DescripcionActividad" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTA_MATERIAL" ReturnType="Collection(PET_DBModel.USP_CONSULTA_MATERIAL_Result)">
+      <Parameter Name="DescripcionMaterial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTA_SOLICITUDES" ReturnType="Collection(PET_DBModel.USP_CONSULTA_SOLICITUDES_Result)">
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="CodigoTipoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoSede" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTAR_AREA" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_AREA_Result)" />
+    <FunctionImport Name="USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO_Result)" />
+    <FunctionImport Name="USP_CONSULTAR_ESTADO_SOLICITUD" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_ESTADO_SOLICITUD_Result)" />
+    <FunctionImport Name="USP_CONSULTAR_SEDE" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_SEDE_Result)" />
+    <FunctionImport Name="USP_CONSULTAR_TIPO_MANTENIMINETO" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_TIPO_MANTENIMINETO_Result)" />
+    <FunctionImport Name="USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO_Result)">
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GET_FICHAMANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_GET_FICHAMANTENIMIENTO_Result)">
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GET_MATERIALES_X_FICHAMANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_GET_MATERIALES_X_FICHAMANTENIMIENTO_Result)">
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GETMANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_GETMANTENIMIENTO_Result)">
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ACI_Chip" EntityType="PET_DBModel.ACI_Chip" />
+    <EntitySet Name="ACI_Chip_OrdenAtencion" EntityType="PET_DBModel.ACI_Chip_OrdenAtencion" />
+    <EntitySet Name="ACI_OrdenAtencion" EntityType="PET_DBModel.ACI_OrdenAtencion" />
+    <EntitySet Name="Actividades" EntityType="PET_DBModel.Actividades" />
+    <EntitySet Name="ActividadesxFichaMantenimiento" EntityType="PET_DBModel.ActividadesxFichaMantenimiento" />
+    <EntitySet Name="Area" EntityType="PET_DBModel.Area" />
+    <EntitySet Name="Cartilla_Atencion" EntityType="PET_DBModel.Cartilla_Atencion" />
+    <EntitySet Name="CE_AprobadorPorArea" EntityType="PET_DBModel.CE_AprobadorPorArea" />
+    <EntitySet Name="CE_EmpleadoPorArea" EntityType="PET_DBModel.CE_EmpleadoPorArea" />
+    <EntitySet Name="CE_Estado" EntityType="PET_DBModel.CE_Estado" />
+    <EntitySet Name="CE_Prioridad" EntityType="PET_DBModel.CE_Prioridad" />
+    <EntitySet Name="Cliente" EntityType="PET_DBModel.Cliente" />
+    <EntitySet Name="Comprobante_Examen" EntityType="PET_DBModel.Comprobante_Examen" />
+    <EntitySet Name="Comprobante_Pago" EntityType="PET_DBModel.Comprobante_Pago" />
+    <EntitySet Name="Detalle_Atencion" EntityType="PET_DBModel.Detalle_Atencion" />
+    <EntitySet Name="Empleado" EntityType="PET_DBModel.Empleado" />
+    <EntitySet Name="Equipo_Sede" EntityType="PET_DBModel.Equipo_Sede" />
+    <EntitySet Name="Especialidad" EntityType="PET_DBModel.Especialidad" />
+    <EntitySet Name="EstadoFichaMantenimiento" EntityType="PET_DBModel.EstadoFichaMantenimiento" />
+    <EntitySet Name="EstadoOrdenTrabajo" EntityType="PET_DBModel.EstadoOrdenTrabajo" />
+    <EntitySet Name="EstadoSolicitud" EntityType="PET_DBModel.EstadoSolicitud" />
+    <EntitySet Name="Examen" EntityType="PET_DBModel.Examen" />
+    <EntitySet Name="FichaMantenimiento" EntityType="PET_DBModel.FichaMantenimiento" />
+    <EntitySet Name="InformeTecnico" EntityType="PET_DBModel.InformeTecnico" />
+    <EntitySet Name="Mantenimiento" EntityType="PET_DBModel.Mantenimiento" />
+    <EntitySet Name="Materiales" EntityType="PET_DBModel.Materiales" />
+    <EntitySet Name="MaterialesxFichaMantenimiento" EntityType="PET_DBModel.MaterialesxFichaMantenimiento" />
+    <EntitySet Name="OrdenTrabajo" EntityType="PET_DBModel.OrdenTrabajo" />
+    <EntitySet Name="Sede" EntityType="PET_DBModel.Sede" />
+    <EntitySet Name="Tecnico" EntityType="PET_DBModel.Tecnico" />
+    <EntitySet Name="TipoMantenimiento" EntityType="PET_DBModel.TipoMantenimiento" />
+    <AssociationSet Name="FK_ACI_Chip_OrdenAtencion_ACI_Chip" Association="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_Chip">
+      <End Role="ACI_Chip" EntitySet="ACI_Chip" />
+      <End Role="ACI_Chip_OrdenAtencion" EntitySet="ACI_Chip_OrdenAtencion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion" Association="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion">
+      <End Role="ACI_OrdenAtencion" EntitySet="ACI_OrdenAtencion" />
+      <End Role="ACI_Chip_OrdenAtencion" EntitySet="ACI_Chip_OrdenAtencion" />
+    </AssociationSet>
+    <AssociationSet Name="ActividadesxFichaMantenimiento_Actividades_FK" Association="PET_DBModel.ActividadesxFichaMantenimiento_Actividades_FK">
+      <End Role="Actividades" EntitySet="Actividades" />
+      <End Role="ActividadesxFichaMantenimiento" EntitySet="ActividadesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="ActividadesxFichaMantenimiento_FichaMantenimiento_FK" Association="PET_DBModel.ActividadesxFichaMantenimiento_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="ActividadesxFichaMantenimiento" EntitySet="ActividadesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="Empleado_Area_FK" Association="PET_DBModel.Empleado_Area_FK">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_cliente_atencion" Association="PET_DBModel.fk_id_cliente_atencion">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_cartilla_de_atencion" Association="PET_DBModel.fk_id_det_cartilla_de_atencion">
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_empleado_atencion" Association="PET_DBModel.fk_id_empleado_atencion">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_cliente_pago" Association="PET_DBModel.fk_id_cliente_pago">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_id_comprobante" Association="PET_DBModel.fk_id_id_comprobante">
+      <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+      <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_tipo_examen" Association="PET_DBModel.fk_id_tipo_examen">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_empleado" Association="PET_DBModel.fk_id_det_empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_empleado_equipo" Association="PET_DBModel.fk_id_det_empleado_equipo">
+      <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_tipo_examen" Association="PET_DBModel.fk_id_det_tipo_examen">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="Tecnico_Empleado_FK" Association="PET_DBModel.Tecnico_Empleado_FK">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Tecnico" EntitySet="Tecnico" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_equipo_sede" Association="PET_DBModel.fk_id_equipo_sede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+    </AssociationSet>
+    <AssociationSet Name="Tecnico_Especialidad_FK" Association="PET_DBModel.Tecnico_Especialidad_FK">
+      <End Role="Especialidad" EntitySet="Especialidad" />
+      <End Role="Tecnico" EntitySet="Tecnico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdenTrabajo_EstadoOrdenTrabajo" Association="PET_DBModel.FK_OrdenTrabajo_EstadoOrdenTrabajo">
+      <End Role="EstadoOrdenTrabajo" EntitySet="EstadoOrdenTrabajo" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="FichaMantenimiento_Mantenimiento_FK" Association="PET_DBModel.FichaMantenimiento_Mantenimiento_FK">
+      <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="MaterialesxFichaMantenimiento_FichaMantenimiento_FK" Association="PET_DBModel.MaterialesxFichaMantenimiento_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="MaterialesxFichaMantenimiento" EntitySet="MaterialesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajo_FichaMantenimiento_FK" Association="PET_DBModel.OrdenTrabajo_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="InformeTecnico_OrdenTrabajo_FK" Association="PET_DBModel.InformeTecnico_OrdenTrabajo_FK">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+      <End Role="InformeTecnico" EntitySet="InformeTecnico" />
+    </AssociationSet>
+    <AssociationSet Name="MaterialesxFichaMantenimiento_Materiales_FK" Association="PET_DBModel.MaterialesxFichaMantenimiento_Materiales_FK">
+      <End Role="Materiales" EntitySet="Materiales" />
+      <End Role="MaterialesxFichaMantenimiento" EntitySet="MaterialesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="TecnicosxOrdenTrabajo" Association="PET_DBModel.TecnicosxOrdenTrabajo">
+      <End Role="Tecnico" EntitySet="Tecnico" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+    </AssociationSet>
+    <EntitySet Name="GPC_DetalleDeSolicitud" EntityType="PET_DBModel.GPC_DetalleDeSolicitud" />
+    <EntitySet Name="GPC_HistoricoDeSolicitud" EntityType="PET_DBModel.GPC_HistoricoDeSolicitud" />
+    <EntitySet Name="GPC_Notificador" EntityType="PET_DBModel.GPC_Notificador" />
+    <EntitySet Name="GPC_Recurso" EntityType="PET_DBModel.GPC_Recurso" />
+    <EntitySet Name="GPC_Solicitud" EntityType="PET_DBModel.GPC_Solicitud" />
+    <FunctionImport Name="ActualizaSolicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+      <Parameter Name="fecha_hora" Mode="In" Type="DateTime" />
+      <Parameter Name="codigo_empleado" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_prioridad" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aprueba_detalle_solicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+      <Parameter Name="item" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad_aprobada" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="aprueba_rechaza_solicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="datos_notificacion">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="EliminaSolicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="EnviaSolicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Estado_Solicitud">
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegistraDetalleSolicitud">
+      <Parameter Name="item" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad_solicitada" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_recurso" Mode="In" Type="Int32" />
+      <Parameter Name="numero_solicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegistraSolicitud">
+      <Parameter Name="fecha_hora" Mode="In" Type="DateTime" />
+      <Parameter Name="codigo_empleado" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_prioridad" Mode="In" Type="Int32" />
+      <Parameter Name="codigo_estado" Mode="In" Type="Int32" />
+      <Parameter Name="numero_solicitud" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Solicitud" EntityType="PET_DBModel.Solicitud" />
+    <AssociationSet Name="Solicitud_Area_FK" Association="PET_DBModel.Solicitud_Area_FK">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_Empleado_FK" Association="PET_DBModel.Solicitud_Empleado_FK">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_Empleado_FKv1" Association="PET_DBModel.Solicitud_Empleado_FKv1">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_EstadoSolicitud" Association="PET_DBModel.FK_Solicitud_EstadoSolicitud">
+      <End Role="EstadoSolicitud" EntitySet="EstadoSolicitud" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Sede" Association="PET_DBModel.FK_Solicitud_Sede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_TipoMantenimiento_FK" Association="PET_DBModel.Solicitud_TipoMantenimiento_FK">
+      <End Role="TipoMantenimiento" EntitySet="TipoMantenimiento" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_5" Association="PET_DBModel.R_5">
+      <End Role="CE_Estado" EntitySet="CE_Estado" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_4" Association="PET_DBModel.R_4">
+      <End Role="CE_Prioridad" EntitySet="CE_Prioridad" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_3" Association="PET_DBModel.R_3">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_1" Association="PET_DBModel.R_1">
+      <End Role="GPC_Recurso" EntitySet="GPC_Recurso" />
+      <End Role="GPC_DetalleDeSolicitud" EntitySet="GPC_DetalleDeSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_2" Association="PET_DBModel.R_2">
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+      <End Role="GPC_DetalleDeSolicitud" EntitySet="GPC_DetalleDeSolicitud" />
+    </AssociationSet>
+    <FunctionImport Name="USP_GETSOLICITUD" ReturnType="Collection(PET_DBModel.USP_GETSOLICITUD_Result)">
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTA_MANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_CONSULTA_MANTENIMIENTO_Result)">
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+      <Parameter Name="DescripcionSolicitud" Mode="In" Type="String" />
+      <Parameter Name="DescripcionMantenimiento" Mode="In" Type="String" />
+      <Parameter Name="CodigoTipoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="CodigoSede" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_ACTIVIDAD_X_FICHA">
+      <Parameter Name="CodigoActividadxFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoActividad" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_MATERIAL_X_FICHA">
+      <Parameter Name="CodigoMaterialxFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoMaterial" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_ORDEN_TRABAJO" ReturnType="Collection(Int32)">
+      <Parameter Name="CodigoOrdenTrabajo" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="CodigoFichaMantenimientoOUT" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTA_FICHA_MANTENIMIENTO" ReturnType="Collection(PET_DBModel.USP_CONSULTA_FICHA_MANTENIMIENTO_Result)">
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="DescripcionFicha" Mode="In" Type="String" />
+      <Parameter Name="CodigoTipoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="EstadoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoSede" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_FICHA_MANTENIMIENTO">
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="CantidadTecnicos" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioRegistro" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="CodigoFichaMantenimientoOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PET_DBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(PET_DBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="USP_REGISTRAR_ACTIVIDAD_X_FICHA1">
+      <Parameter Name="CodigoActividadxFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoActividad" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_MATERIAL_X_FICHA1">
+      <Parameter Name="CodigoMaterialxFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoMaterial" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_COSULTAR_TECNICO" ReturnType="Collection(PET_DBModel.USP_COSULTAR_TECNICO_Result)">
+      <Parameter Name="NOMBRES" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GET_ORDEN_TRABAJO" ReturnType="Collection(PET_DBModel.USP_GET_ORDEN_TRABAJO_Result)">
+      <Parameter Name="CodigoOrdenTrabajo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GET_TECNICOS_X_ORDEN_TRABAJO" ReturnType="Collection(PET_DBModel.USP_GET_TECNICOS_X_ORDEN_TRABAJO_Result)">
+      <Parameter Name="CodigoOrdenTrabajo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_ORDEN_TRABAJO1">
+      <Parameter Name="CodigoOrdenTrabajo" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoFichaMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="Observacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="CodigoFichaMantenimientoOUT" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_TECNICOS_X_OT">
+      <Parameter Name="CodigoEmpleado" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoOrdenTrabajo" Mode="In" Type="Int32" />
+      <Parameter Name="Opcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_CONSULTAR_OT" ReturnType="Collection(PET_DBModel.USP_CONSULTAR_OT_Result)">
+      <Parameter Name="DescripcionOT" Mode="In" Type="String" />
+      <Parameter Name="FechaInicio" Mode="In" Type="String" />
+      <Parameter Name="FechaFin" Mode="In" Type="String" />
+      <Parameter Name="Sede" Mode="In" Type="Int32" />
+      <Parameter Name="Area" Mode="In" Type="Int32" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_SOLICITUD">
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoSede" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoTipoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="CodigoEmpleado1" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioRegistro" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="CodigoSolicitudOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_REGISTRAR_MANTENIMIENTO">
+      <Parameter Name="CodigoMantenimiento" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Fecha" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="CodigoSolicitud" Mode="In" Type="Int32" />
+      <Parameter Name="UsuarioCreacion" Mode="In" Type="String" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="USP_CONSULTA_ACTIVIDAD_Result">
+    <Property Type="Int32" Name="CodigoActividad" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="70" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_AREA_Result">
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoEstadoFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_ESTADO_SOLICITUD_Result">
+    <Property Type="Int32" Name="CodigoEstadoSolicitud" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_SEDE_Result">
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_TIPO_MANTENIMINETO_Result">
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoActividadxFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoActividad" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+    <Property Type="String" Name="DescripcionActividad" Nullable="true" MaxLength="70" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_FICHAMANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="false" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="String" Name="DescripcionTipoMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoEmpleadoAprueba" Nullable="false" />
+    <Property Type="String" Name="NombreEmpleadoAprueba" Nullable="true" MaxLength="153" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="DescripcionAreaMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DescrpcionFichaMantenimiento" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="FechaFichaMantenimiento" Nullable="false" />
+    <Property Type="DateTime" Name="FechaInicioFichaMantenimiento" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FechaFinFichaMantenimiento" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="CantidadTecnicosFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEstadoFichaMantenimiento" Nullable="true" />
+    <Property Type="String" Name="DescrpcionEstadoFichaMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <Property Type="String" Name="DescripcionSedeMantenimiento" Nullable="true" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_MATERIALES_X_FICHAMANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoMaterialxFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoMaterial" Nullable="false" />
+    <Property Type="String" Name="DescripcionMaterial" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="ACI_Chip">
+    <Key>
+      <PropertyRef Name="idChip" />
+    </Key>
+    <Property Type="Int32" Name="idChip" Nullable="false" />
+    <Property Type="String" Name="nombreChip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="estado" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACI_Chip_OrdenAtencion" Relationship="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_Chip" FromRole="ACI_Chip" ToRole="ACI_Chip_OrdenAtencion" />
+  </EntityType>
+  <EntityType Name="ACI_Chip_OrdenAtencion">
+    <Key>
+      <PropertyRef Name="idChipOrdenAtencion" />
+    </Key>
+    <Property Type="Int32" Name="idChipOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="idOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="idChip" Nullable="false" />
+    <NavigationProperty Name="ACI_Chip" Relationship="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_Chip" FromRole="ACI_Chip_OrdenAtencion" ToRole="ACI_Chip" />
+    <NavigationProperty Name="ACI_OrdenAtencion" Relationship="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion" FromRole="ACI_Chip_OrdenAtencion" ToRole="ACI_OrdenAtencion" />
+  </EntityType>
+  <EntityType Name="ACI_OrdenAtencion">
+    <Key>
+      <PropertyRef Name="idOrdenAtencion" />
+    </Key>
+    <Property Type="Int32" Name="idOrdenAtencion" Nullable="false" />
+    <Property Type="Int32" Name="id_paciente" Nullable="false" />
+    <Property Type="String" Name="estadoAtencion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fechaOrdenAtencion" Nullable="false" Precision="0" />
+    <Property Type="String" Name="observaciones" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="chipImplantado" Nullable="false" />
+    <Property Type="String" Name="motivoImplantacion" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACI_Chip_OrdenAtencion" Relationship="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion" FromRole="ACI_OrdenAtencion" ToRole="ACI_Chip_OrdenAtencion" />
+  </EntityType>
+  <EntityType Name="Actividades">
+    <Key>
+      <PropertyRef Name="CodigoActividad" />
+    </Key>
+    <Property Type="Int32" Name="CodigoActividad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="ActividadesxFichaMantenimiento" Relationship="PET_DBModel.ActividadesxFichaMantenimiento_Actividades_FK" FromRole="Actividades" ToRole="ActividadesxFichaMantenimiento" />
+  </EntityType>
+  <EntityType Name="ActividadesxFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoActividadxFichaMantenimiento" />
+    </Key>
+    <Property Type="Int32" Name="CodigoActividadxFichaMantenimiento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoActividad" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Actividades" Relationship="PET_DBModel.ActividadesxFichaMantenimiento_Actividades_FK" FromRole="ActividadesxFichaMantenimiento" ToRole="Actividades" />
+    <NavigationProperty Name="FichaMantenimiento" Relationship="PET_DBModel.ActividadesxFichaMantenimiento_FichaMantenimiento_FK" FromRole="ActividadesxFichaMantenimiento" ToRole="FichaMantenimiento" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+    </Key>
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Descripcion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.Empleado_Area_FK" FromRole="Area" ToRole="Empleado" />
+    <NavigationProperty Name="Solicitud" Relationship="PET_DBModel.Solicitud_Area_FK" FromRole="Area" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Cartilla_Atencion">
+    <Key>
+      <PropertyRef Name="id_cartilla_atencion" />
+    </Key>
+    <Property Type="Int32" Name="id_cartilla_atencion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="Int32" Name="id_paciente" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="String" Name="codigo" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha_creacion" Precision="3" />
+    <Property Type="String" Name="estado_cartilla" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numero_comprobante" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cliente" Relationship="PET_DBModel.fk_id_cliente_atencion" FromRole="Cartilla_Atencion" ToRole="Cliente" />
+    <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_cartilla_de_atencion" FromRole="Cartilla_Atencion" ToRole="Detalle_Atencion" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.fk_id_empleado_atencion" FromRole="Cartilla_Atencion" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="CE_AprobadorPorArea">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="Int32" Name="prioridad" />
+  </EntityType>
+  <EntityType Name="CE_EmpleadoPorArea">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CE_Estado">
+    <Key>
+      <PropertyRef Name="codigo_estado" />
+    </Key>
+    <Property Type="Int32" Name="codigo_estado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion_estado" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GPC_Solicitud" Relationship="PET_DBModel.R_5" FromRole="CE_Estado" ToRole="GPC_Solicitud" />
+  </EntityType>
+  <EntityType Name="CE_Prioridad">
+    <Key>
+      <PropertyRef Name="codigo_prioridad" />
+    </Key>
+    <Property Type="Int32" Name="codigo_prioridad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion_prioridad" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GPC_Solicitud" Relationship="PET_DBModel.R_4" FromRole="CE_Prioridad" ToRole="GPC_Solicitud" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Type="Int32" Name="id_cliente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="dni" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="apellido_paterno" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="apellido_materno" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombres" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha_nacimiento" Precision="0" />
+    <Property Type="String" Name="sexo" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="direccion" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="telefono_casa" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="celular" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="correo" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_cliente_atencion" FromRole="Cliente" ToRole="Cartilla_Atencion" />
+    <NavigationProperty Name="Comprobante_Pago" Relationship="PET_DBModel.fk_id_cliente_pago" FromRole="Cliente" ToRole="Comprobante_Pago" />
+  </EntityType>
+  <EntityType Name="Comprobante_Examen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_comprobante" Nullable="false" />
+    <Property Type="Int32" Name="id_tipo_examen" Nullable="false" />
+    <NavigationProperty Name="Comprobante_Pago" Relationship="PET_DBModel.fk_id_id_comprobante" FromRole="Comprobante_Examen" ToRole="Comprobante_Pago" />
+    <NavigationProperty Name="Examen" Relationship="PET_DBModel.fk_id_tipo_examen" FromRole="Comprobante_Examen" ToRole="Examen" />
+  </EntityType>
+  <EntityType Name="Comprobante_Pago">
+    <Key>
+      <PropertyRef Name="id_comprobante" />
+    </Key>
+    <Property Type="Int32" Name="id_comprobante" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_cliente" Nullable="false" />
+    <Property Type="Int32" Name="id_paciente" Nullable="false" />
+    <Property Type="String" Name="numero_comprobante" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="monto_total" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="fecha_creacion" Precision="3" />
+    <Property Type="String" Name="tipo_comprobante" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="forma_pago" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="estado_comprobante" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cliente" Relationship="PET_DBModel.fk_id_cliente_pago" FromRole="Comprobante_Pago" ToRole="Cliente" />
+    <NavigationProperty Name="Comprobante_Examen" Relationship="PET_DBModel.fk_id_id_comprobante" FromRole="Comprobante_Pago" ToRole="Comprobante_Examen" />
+  </EntityType>
+  <EntityType Name="Detalle_Atencion">
+    <Key>
+      <PropertyRef Name="id_detalle" />
+    </Key>
+    <Property Type="Int32" Name="id_detalle" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="id_cartilla_atencion" Nullable="false" />
+    <Property Type="Int32" Name="id_tipo_examen" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEmpleado" />
+    <Property Type="String" Name="especificacion_examen" MaxLength="130" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="estado_examen_atencion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_equipo" />
+    <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_det_cartilla_de_atencion" FromRole="Detalle_Atencion" ToRole="Cartilla_Atencion" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.fk_id_det_empleado" FromRole="Detalle_Atencion" ToRole="Empleado" />
+    <NavigationProperty Name="Equipo_Sede" Relationship="PET_DBModel.fk_id_det_empleado_equipo" FromRole="Detalle_Atencion" ToRole="Equipo_Sede" />
+    <NavigationProperty Name="Examen" Relationship="PET_DBModel.fk_id_det_tipo_examen" FromRole="Detalle_Atencion" ToRole="Examen" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <Property Type="String" Name="dni" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="especialidad" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sexo" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="direccion" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha_nacimiento" Precision="0" />
+    <Property Type="String" Name="telefono_casa" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="celular" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cargo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id_supervisor" />
+    <Property Type="Int32" Name="id_sede" />
+    <NavigationProperty Name="Area" Relationship="PET_DBModel.Empleado_Area_FK" FromRole="Empleado" ToRole="Area" />
+    <NavigationProperty Name="Cartilla_Atencion" Relationship="PET_DBModel.fk_id_empleado_atencion" FromRole="Empleado" ToRole="Cartilla_Atencion" />
+    <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_empleado" FromRole="Empleado" ToRole="Detalle_Atencion" />
+    <NavigationProperty Name="Tecnico" Relationship="PET_DBModel.Tecnico_Empleado_FK" FromRole="Empleado" ToRole="Tecnico" />
+    <NavigationProperty Name="Solicitud" Relationship="PET_DBModel.Solicitud_Empleado_FK" FromRole="Empleado" ToRole="Solicitud" />
+    <NavigationProperty Name="Solicitud1" Relationship="PET_DBModel.Solicitud_Empleado_FKv1" FromRole="Empleado" ToRole="Solicitud" />
+    <NavigationProperty Name="GPC_Solicitud" Relationship="PET_DBModel.R_3" FromRole="Empleado" ToRole="GPC_Solicitud" />
+  </EntityType>
+  <EntityType Name="Equipo_Sede">
+    <Key>
+      <PropertyRef Name="id_equipo" />
+    </Key>
+    <Property Type="Int32" Name="id_equipo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_empleado_equipo" FromRole="Equipo_Sede" ToRole="Detalle_Atencion" />
+    <NavigationProperty Name="Sede" Relationship="PET_DBModel.fk_id_equipo_sede" FromRole="Equipo_Sede" ToRole="Sede" />
+  </EntityType>
+  <EntityType Name="Especialidad">
+    <Key>
+      <PropertyRef Name="CodigoEspecialidad" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEspecialidad" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Tecnico" Relationship="PET_DBModel.Tecnico_Especialidad_FK" FromRole="Especialidad" ToRole="Tecnico" />
+  </EntityType>
+  <EntityType Name="EstadoFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoEstadoFichaMantenimiento" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEstadoFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EstadoOrdenTrabajo">
+    <Key>
+      <PropertyRef Name="CodigoEstadoOrdenTrabajo" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEstadoOrdenTrabajo" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="OrdenTrabajo" Relationship="PET_DBModel.FK_OrdenTrabajo_EstadoOrdenTrabajo" FromRole="EstadoOrdenTrabajo" ToRole="OrdenTrabajo" />
+  </EntityType>
+  <EntityType Name="EstadoSolicitud">
+    <Key>
+      <PropertyRef Name="CodigoEstadoSolicitud" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEstadoSolicitud" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Solicitud" Relationship="PET_DBModel.FK_Solicitud_EstadoSolicitud" FromRole="EstadoSolicitud" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="id_tipo_examen" />
+    </Key>
+    <Property Type="Int32" Name="id_tipo_examen" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="tipo_examen" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="fecha_creacion" Precision="0" />
+    <NavigationProperty Name="Comprobante_Examen" Relationship="PET_DBModel.fk_id_tipo_examen" FromRole="Examen" ToRole="Comprobante_Examen" />
+    <NavigationProperty Name="Detalle_Atencion" Relationship="PET_DBModel.fk_id_det_tipo_examen" FromRole="Examen" ToRole="Detalle_Atencion" />
+  </EntityType>
+  <EntityType Name="FichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoFichaMantenimiento" />
+    </Key>
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="false" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FechaFin" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CantidadTecnicos" Nullable="false" />
+    <Property Type="Int32" Name="Estado" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <NavigationProperty Name="ActividadesxFichaMantenimiento" Relationship="PET_DBModel.ActividadesxFichaMantenimiento_FichaMantenimiento_FK" FromRole="FichaMantenimiento" ToRole="ActividadesxFichaMantenimiento" />
+    <NavigationProperty Name="Mantenimiento" Relationship="PET_DBModel.FichaMantenimiento_Mantenimiento_FK" FromRole="FichaMantenimiento" ToRole="Mantenimiento" />
+    <NavigationProperty Name="MaterialesxFichaMantenimiento" Relationship="PET_DBModel.MaterialesxFichaMantenimiento_FichaMantenimiento_FK" FromRole="FichaMantenimiento" ToRole="MaterialesxFichaMantenimiento" />
+    <NavigationProperty Name="OrdenTrabajo" Relationship="PET_DBModel.OrdenTrabajo_FichaMantenimiento_FK" FromRole="FichaMantenimiento" ToRole="OrdenTrabajo" />
+  </EntityType>
+  <EntityType Name="InformeTecnico">
+    <Key>
+      <PropertyRef Name="CodigoInformeTecnico" />
+    </Key>
+    <Property Type="Int32" Name="CodigoInformeTecnico" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CodigoOrdenTrabajo" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Precision="3" />
+    <Property Type="String" Name="Descripcion" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="OrdenTrabajo" Relationship="PET_DBModel.InformeTecnico_OrdenTrabajo_FK" FromRole="InformeTecnico" ToRole="OrdenTrabajo" />
+  </EntityType>
+  <EntityType Name="Mantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoMantenimiento" />
+      <PropertyRef Name="CodigoSolicitud" />
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+      <PropertyRef Name="CodigoArea" />
+    </Key>
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="Fecha" Precision="3" />
+    <Property Type="String" Name="Descripcion" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="false" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" />
+    <NavigationProperty Name="FichaMantenimiento" Relationship="PET_DBModel.FichaMantenimiento_Mantenimiento_FK" FromRole="Mantenimiento" ToRole="FichaMantenimiento" />
+  </EntityType>
+  <EntityType Name="Materiales">
+    <Key>
+      <PropertyRef Name="CodigoMaterial" />
+    </Key>
+    <Property Type="Int32" Name="CodigoMaterial" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="MaterialesxFichaMantenimiento" Relationship="PET_DBModel.MaterialesxFichaMantenimiento_Materiales_FK" FromRole="Materiales" ToRole="MaterialesxFichaMantenimiento" />
+  </EntityType>
+  <EntityType Name="MaterialesxFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoMaterialxFichaMantenimiento" />
+    </Key>
+    <Property Type="Int32" Name="CodigoMaterialxFichaMantenimiento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Cantidad" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoMaterial" Nullable="false" />
+    <NavigationProperty Name="FichaMantenimiento" Relationship="PET_DBModel.MaterialesxFichaMantenimiento_FichaMantenimiento_FK" FromRole="MaterialesxFichaMantenimiento" ToRole="FichaMantenimiento" />
+    <NavigationProperty Name="Materiales" Relationship="PET_DBModel.MaterialesxFichaMantenimiento_Materiales_FK" FromRole="MaterialesxFichaMantenimiento" ToRole="Materiales" />
+  </EntityType>
+  <EntityType Name="OrdenTrabajo">
+    <Key>
+      <PropertyRef Name="CodigoOrdenTrabajo" />
+    </Key>
+    <Property Type="Int32" Name="CodigoOrdenTrabajo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Observacion" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="FechaFin" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <NavigationProperty Name="EstadoOrdenTrabajo" Relationship="PET_DBModel.FK_OrdenTrabajo_EstadoOrdenTrabajo" FromRole="OrdenTrabajo" ToRole="EstadoOrdenTrabajo" />
+    <NavigationProperty Name="FichaMantenimiento" Relationship="PET_DBModel.OrdenTrabajo_FichaMantenimiento_FK" FromRole="OrdenTrabajo" ToRole="FichaMantenimiento" />
+    <NavigationProperty Name="InformeTecnico" Relationship="PET_DBModel.InformeTecnico_OrdenTrabajo_FK" FromRole="OrdenTrabajo" ToRole="InformeTecnico" />
+    <NavigationProperty Name="Tecnico" Relationship="PET_DBModel.TecnicosxOrdenTrabajo" FromRole="OrdenTrabajo" ToRole="Tecnico" />
+  </EntityType>
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="CodigoSede" />
+    </Key>
+    <Property Type="Int32" Name="CodigoSede" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Direccion" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telefono" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Equipo_Sede" Relationship="PET_DBModel.fk_id_equipo_sede" FromRole="Sede" ToRole="Equipo_Sede" />
+    <NavigationProperty Name="Solicitud" Relationship="PET_DBModel.FK_Solicitud_Sede" FromRole="Sede" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Tecnico">
+    <Key>
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="Int32" Name="CodigoTecnico" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CodigoEspecialidad" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.Tecnico_Empleado_FK" FromRole="Tecnico" ToRole="Empleado" />
+    <NavigationProperty Name="Especialidad" Relationship="PET_DBModel.Tecnico_Especialidad_FK" FromRole="Tecnico" ToRole="Especialidad" />
+    <NavigationProperty Name="OrdenTrabajo" Relationship="PET_DBModel.TecnicosxOrdenTrabajo" FromRole="Tecnico" ToRole="OrdenTrabajo" />
+  </EntityType>
+  <EntityType Name="TipoMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+    </Key>
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Descripcion" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UsuarioCreacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Precision="3" />
+    <Property Type="String" Name="UsuarioActualizacion" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="EstadoRegistro" />
+    <NavigationProperty Name="Solicitud" Relationship="PET_DBModel.Solicitud_TipoMantenimiento_FK" FromRole="TipoMantenimiento" ToRole="Solicitud" />
+  </EntityType>
+  <Association Name="FK_ACI_Chip_OrdenAtencion_ACI_Chip">
+    <End Type="PET_DBModel.ACI_Chip" Role="ACI_Chip" Multiplicity="1" />
+    <End Type="PET_DBModel.ACI_Chip_OrdenAtencion" Role="ACI_Chip_OrdenAtencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACI_Chip">
+        <PropertyRef Name="idChip" />
+      </Principal>
+      <Dependent Role="ACI_Chip_OrdenAtencion">
+        <PropertyRef Name="idChip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion">
+    <End Type="PET_DBModel.ACI_OrdenAtencion" Role="ACI_OrdenAtencion" Multiplicity="1" />
+    <End Type="PET_DBModel.ACI_Chip_OrdenAtencion" Role="ACI_Chip_OrdenAtencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACI_OrdenAtencion">
+        <PropertyRef Name="idOrdenAtencion" />
+      </Principal>
+      <Dependent Role="ACI_Chip_OrdenAtencion">
+        <PropertyRef Name="idOrdenAtencion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActividadesxFichaMantenimiento_Actividades_FK">
+    <End Type="PET_DBModel.Actividades" Role="Actividades" Multiplicity="1" />
+    <End Type="PET_DBModel.ActividadesxFichaMantenimiento" Role="ActividadesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividades">
+        <PropertyRef Name="CodigoActividad" />
+      </Principal>
+      <Dependent Role="ActividadesxFichaMantenimiento">
+        <PropertyRef Name="CodigoActividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActividadesxFichaMantenimiento_FichaMantenimiento_FK">
+    <End Type="PET_DBModel.FichaMantenimiento" Role="FichaMantenimiento" Multiplicity="1" />
+    <End Type="PET_DBModel.ActividadesxFichaMantenimiento" Role="ActividadesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="ActividadesxFichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Empleado_Area_FK">
+    <End Type="PET_DBModel.Area" Role="Area" Multiplicity="1" />
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_cliente_atencion">
+    <End Type="PET_DBModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="PET_DBModel.Cartilla_Atencion" Role="Cartilla_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Cartilla_Atencion">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_cartilla_de_atencion">
+    <End Type="PET_DBModel.Cartilla_Atencion" Role="Cartilla_Atencion" Multiplicity="1" />
+    <End Type="PET_DBModel.Detalle_Atencion" Role="Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cartilla_Atencion">
+        <PropertyRef Name="id_cartilla_atencion" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_cartilla_atencion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_empleado_atencion">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="PET_DBModel.Cartilla_Atencion" Role="Cartilla_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Cartilla_Atencion">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_cliente_pago">
+    <End Type="PET_DBModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="PET_DBModel.Comprobante_Pago" Role="Comprobante_Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Comprobante_Pago">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_id_comprobante">
+    <End Type="PET_DBModel.Comprobante_Pago" Role="Comprobante_Pago" Multiplicity="1" />
+    <End Type="PET_DBModel.Comprobante_Examen" Role="Comprobante_Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprobante_Pago">
+        <PropertyRef Name="id_comprobante" />
+      </Principal>
+      <Dependent Role="Comprobante_Examen">
+        <PropertyRef Name="id_comprobante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_tipo_examen">
+    <End Type="PET_DBModel.Examen" Role="Examen" Multiplicity="1" />
+    <End Type="PET_DBModel.Comprobante_Examen" Role="Comprobante_Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Principal>
+      <Dependent Role="Comprobante_Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_empleado">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="PET_DBModel.Detalle_Atencion" Role="Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_empleado_equipo">
+    <End Type="PET_DBModel.Equipo_Sede" Role="Equipo_Sede" Multiplicity="0..1" />
+    <End Type="PET_DBModel.Detalle_Atencion" Role="Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipo_Sede">
+        <PropertyRef Name="id_equipo" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_equipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_tipo_examen">
+    <End Type="PET_DBModel.Examen" Role="Examen" Multiplicity="1" />
+    <End Type="PET_DBModel.Detalle_Atencion" Role="Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_tipo_examen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tecnico_Empleado_FK">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="PET_DBModel.Tecnico" Role="Tecnico" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Tecnico">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_equipo_sede">
+    <End Type="PET_DBModel.Sede" Role="Sede" Multiplicity="1" />
+    <End Type="PET_DBModel.Equipo_Sede" Role="Equipo_Sede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Principal>
+      <Dependent Role="Equipo_Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tecnico_Especialidad_FK">
+    <End Type="PET_DBModel.Especialidad" Role="Especialidad" Multiplicity="1" />
+    <End Type="PET_DBModel.Tecnico" Role="Tecnico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidad">
+        <PropertyRef Name="CodigoEspecialidad" />
+      </Principal>
+      <Dependent Role="Tecnico">
+        <PropertyRef Name="CodigoEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdenTrabajo_EstadoOrdenTrabajo">
+    <End Type="PET_DBModel.EstadoOrdenTrabajo" Role="EstadoOrdenTrabajo" Multiplicity="1" />
+    <End Type="PET_DBModel.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoOrdenTrabajo">
+        <PropertyRef Name="CodigoEstadoOrdenTrabajo" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaMantenimiento_Mantenimiento_FK">
+    <End Type="PET_DBModel.Mantenimiento" Role="Mantenimiento" Multiplicity="1" />
+    <End Type="PET_DBModel.FichaMantenimiento" Role="FichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mantenimiento">
+        <PropertyRef Name="CodigoMantenimiento" />
+        <PropertyRef Name="CodigoSolicitud" />
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoMantenimiento" />
+        <PropertyRef Name="CodigoSolicitud" />
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaterialesxFichaMantenimiento_FichaMantenimiento_FK">
+    <End Type="PET_DBModel.FichaMantenimiento" Role="FichaMantenimiento" Multiplicity="1" />
+    <End Type="PET_DBModel.MaterialesxFichaMantenimiento" Role="MaterialesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="MaterialesxFichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajo_FichaMantenimiento_FK">
+    <End Type="PET_DBModel.FichaMantenimiento" Role="FichaMantenimiento" Multiplicity="1" />
+    <End Type="PET_DBModel.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InformeTecnico_OrdenTrabajo_FK">
+    <End Type="PET_DBModel.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="1" />
+    <End Type="PET_DBModel.InformeTecnico" Role="InformeTecnico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenTrabajo">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Principal>
+      <Dependent Role="InformeTecnico">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaterialesxFichaMantenimiento_Materiales_FK">
+    <End Type="PET_DBModel.Materiales" Role="Materiales" Multiplicity="1" />
+    <End Type="PET_DBModel.MaterialesxFichaMantenimiento" Role="MaterialesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materiales">
+        <PropertyRef Name="CodigoMaterial" />
+      </Principal>
+      <Dependent Role="MaterialesxFichaMantenimiento">
+        <PropertyRef Name="CodigoMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TecnicosxOrdenTrabajo">
+    <End Type="PET_DBModel.Tecnico" Role="Tecnico" Multiplicity="*" />
+    <End Type="PET_DBModel.OrdenTrabajo" Role="OrdenTrabajo" Multiplicity="*" />
+  </Association>
+  <EntityType Name="GPC_DetalleDeSolicitud">
+    <Key>
+      <PropertyRef Name="item" />
+      <PropertyRef Name="numero_solicitud" />
+    </Key>
+    <Property Name="item" Type="Int32" Nullable="false" />
+    <Property Name="cantidad_solicitada" Type="Double" />
+    <Property Name="cantidad_aprobada" Type="Double" />
+    <Property Name="cantidad_atendida" Type="Double" />
+    <Property Name="codigo_recurso" Type="Int32" />
+    <Property Name="numero_solicitud" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GPC_Recurso" Relationship="PET_DBModel.R_1" FromRole="GPC_DetalleDeSolicitud" ToRole="GPC_Recurso" />
+    <NavigationProperty Name="GPC_Solicitud" Relationship="PET_DBModel.R_2" FromRole="GPC_DetalleDeSolicitud" ToRole="GPC_Solicitud" />
+  </EntityType>
+  <EntityType Name="GPC_HistoricoDeSolicitud">
+    <Key>
+      <PropertyRef Name="codigo_historia" />
+    </Key>
+    <Property Name="codigo_historia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numero_solicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_operacion" Type="DateTime" Precision="3" />
+    <Property Name="CodigoEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="codigo_estado" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GPC_Notificador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="De" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Para" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Asunto" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Texto" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GPC_Recurso">
+    <Key>
+      <PropertyRef Name="codigo_recurso" />
+    </Key>
+    <Property Name="codigo_recurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_recurso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="unidad_medida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="unidad_compra" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="precio_unitario" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="moneda" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GPC_DetalleDeSolicitud" Relationship="PET_DBModel.R_1" FromRole="GPC_Recurso" ToRole="GPC_DetalleDeSolicitud" />
+  </EntityType>
+  <EntityType Name="GPC_Solicitud">
+    <Key>
+      <PropertyRef Name="numero_solicitud" />
+    </Key>
+    <Property Name="numero_solicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_hora" Type="DateTime" Precision="3" />
+    <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_prioridad" Type="Int32" />
+    <Property Name="codigo_estado" Type="Int32" />
+    <Property Name="codigo_solicitud" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_aprobador" Type="Int32" />
+    <Property Type="Int32" Name="codigoEmpleado" />
+    <NavigationProperty Name="CE_Estado" Relationship="PET_DBModel.R_5" FromRole="GPC_Solicitud" ToRole="CE_Estado" />
+    <NavigationProperty Name="CE_Prioridad" Relationship="PET_DBModel.R_4" FromRole="GPC_Solicitud" ToRole="CE_Prioridad" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.R_3" FromRole="GPC_Solicitud" ToRole="Empleado" />
+    <NavigationProperty Name="GPC_DetalleDeSolicitud" Relationship="PET_DBModel.R_2" FromRole="GPC_Solicitud" ToRole="GPC_DetalleDeSolicitud" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="CodigoSolicitud" />
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+      <PropertyRef Name="CodigoSede" />
+    </Key>
+    <Property Name="CodigoSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="CodigoArea" Type="Int32" Nullable="false" />
+    <Property Name="CodigoTipoMantenimiento" Type="Int32" Nullable="false" />
+    <Property Name="CodigoEmpleado1" Type="Int32" Nullable="false" />
+    <Property Name="CodigoEmpleado2" Type="Int32" />
+    <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaHoraCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuarioActualizacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaHoraActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="EstadoRegistro" Type="Boolean" />
+    <Property Name="CodigoSede" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="PET_DBModel.Solicitud_Area_FK" FromRole="Solicitud" ToRole="Area" />
+    <NavigationProperty Name="Empleado" Relationship="PET_DBModel.Solicitud_Empleado_FK" FromRole="Solicitud" ToRole="Empleado" />
+    <NavigationProperty Name="Empleado1" Relationship="PET_DBModel.Solicitud_Empleado_FKv1" FromRole="Solicitud" ToRole="Empleado" />
+    <NavigationProperty Name="EstadoSolicitud" Relationship="PET_DBModel.FK_Solicitud_EstadoSolicitud" FromRole="Solicitud" ToRole="EstadoSolicitud" />
+    <NavigationProperty Name="Sede" Relationship="PET_DBModel.FK_Solicitud_Sede" FromRole="Solicitud" ToRole="Sede" />
+    <NavigationProperty Name="TipoMantenimiento" Relationship="PET_DBModel.Solicitud_TipoMantenimiento_FK" FromRole="Solicitud" ToRole="TipoMantenimiento" />
+  </EntityType>
+  <Association Name="Solicitud_Area_FK">
+    <End Type="PET_DBModel.Area" Role="Area" Multiplicity="1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_Empleado_FK">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoEmpleado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_Empleado_FKv1">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoEmpleado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_EstadoSolicitud">
+    <End Type="PET_DBModel.EstadoSolicitud" Role="EstadoSolicitud" Multiplicity="1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoSolicitud">
+        <PropertyRef Name="CodigoEstadoSolicitud" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Sede">
+    <End Type="PET_DBModel.Sede" Role="Sede" Multiplicity="1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_TipoMantenimiento_FK">
+    <End Type="PET_DBModel.TipoMantenimiento" Role="TipoMantenimiento" Multiplicity="1" />
+    <End Type="PET_DBModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMantenimiento">
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_5">
+    <End Type="PET_DBModel.CE_Estado" Role="CE_Estado" Multiplicity="0..1" />
+    <End Type="PET_DBModel.GPC_Solicitud" Role="GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CE_Estado">
+        <PropertyRef Name="codigo_estado" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigo_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_4">
+    <End Type="PET_DBModel.CE_Prioridad" Role="CE_Prioridad" Multiplicity="0..1" />
+    <End Type="PET_DBModel.GPC_Solicitud" Role="GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CE_Prioridad">
+        <PropertyRef Name="codigo_prioridad" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigo_prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_3">
+    <End Type="PET_DBModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="PET_DBModel.GPC_Solicitud" Role="GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_1">
+    <End Type="PET_DBModel.GPC_Recurso" Role="GPC_Recurso" Multiplicity="0..1" />
+    <End Type="PET_DBModel.GPC_DetalleDeSolicitud" Role="GPC_DetalleDeSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GPC_Recurso">
+        <PropertyRef Name="codigo_recurso" />
+      </Principal>
+      <Dependent Role="GPC_DetalleDeSolicitud">
+        <PropertyRef Name="codigo_recurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_2">
+    <End Type="PET_DBModel.GPC_Solicitud" Role="GPC_Solicitud" Multiplicity="1" />
+    <End Type="PET_DBModel.GPC_DetalleDeSolicitud" Role="GPC_DetalleDeSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GPC_Solicitud">
+        <PropertyRef Name="numero_solicitud" />
+      </Principal>
+      <Dependent Role="GPC_DetalleDeSolicitud">
+        <PropertyRef Name="numero_solicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="USP_CONSULTA_SOLICITUDES_Result">
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="true" />
+    <Property Type="String" Name="DescripcionSolicitud" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FechaSolicitud" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CodigoEstadoSolicitud" Nullable="true" />
+    <Property Type="String" Name="DescripcionEstadoSolicitud" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="true" />
+    <Property Type="String" Name="DescripcionSedeSolicitud" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="true" />
+    <Property Type="String" Name="DescripcionAreaSolicitud" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="true" />
+    <Property Type="String" Name="DescripcionTipoMantenimiento" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CodigoEmpleadoRegistra" Nullable="true" />
+    <Property Type="String" Name="NombreEmpleadoRegistra" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CodigoEmpleadoAprueba" Nullable="true" />
+    <Property Type="String" Name="NombreEmpleadoAprueba" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_GETSOLICITUD_Result">
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="false" />
+    <Property Type="String" Name="DescripcionSolicitud" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="FechaSolicitud" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CodigoEstadoSolicitud" Nullable="false" />
+    <Property Type="String" Name="DescripcionEstadoSolicitud" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="true" />
+    <Property Type="String" Name="DescripcionSedeSolicitud" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="DescripcionAreaSolicitud" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="String" Name="DescripcionTipoMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoEmpleadoRegistra" Nullable="false" />
+    <Property Type="String" Name="NombreEmpleadoRegistra" Nullable="true" MaxLength="153" />
+    <Property Type="Int32" Name="CodigoEmpleadoAprueba" Nullable="true" />
+    <Property Type="String" Name="NombreEmpleadoAprueba" Nullable="true" MaxLength="153" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="USP_GETMANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Fecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="false" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="false" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTA_MANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="true" />
+    <Property Type="String" Name="DescripcionSolicitud" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="true" />
+    <Property Type="String" Name="NombreMantenimiento" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FechaMantenimiento" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DescripcionMantenimiento" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="true" />
+    <Property Type="String" Name="DescripcionTipoMantenimiento" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="true" />
+    <Property Type="String" Name="DescripcionAreaMantenimiento" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="true" />
+    <Property Type="String" Name="DescripcionSedeMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+    <Property Type="Int32" Name="CodigoEmpleadoRegistra" Nullable="true" />
+    <Property Type="String" Name="NombreEmpleadoRegistra" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTA_MATERIAL_Result">
+    <Property Type="Int32" Name="CodigoMaterial" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTA_FICHA_MANTENIMIENTO_Result">
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="true" />
+    <Property Type="Int32" Name="CodigoMantenimiento" Nullable="true" />
+    <Property Type="Int32" Name="CodigoSolicitud" Nullable="true" />
+    <Property Type="Int32" Name="CodigoTipoMantenimiento" Nullable="true" />
+    <Property Type="String" Name="DescripcionTipoMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoEmpleadoAprueba" Nullable="true" />
+    <Property Type="String" Name="NombreEmpleadoAprueba" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodigoArea" Nullable="true" />
+    <Property Type="String" Name="DescripcionAreaMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DescrpcionFichaMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FechaFichaMantenimiento" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FechaInicioFichaMantenimiento" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FechaFinFichaMantenimiento" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CantidadTecnicosFichaMantenimiento" Nullable="true" />
+    <Property Type="Int32" Name="CodigoEstadoFichaMantenimiento" Nullable="true" />
+    <Property Type="String" Name="DescrpcionEstadoFichaMantenimiento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="true" />
+    <Property Type="Int32" Name="CodigoSede" Nullable="true" />
+    <Property Type="String" Name="DescripcionSedeMantenimiento" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="USP_COSULTAR_TECNICO_Result">
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="ESPECIALIDAD" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_ORDEN_TRABAJO_Result">
+    <Property Type="Int32" Name="CodigoOrdenTrabajo" Nullable="false" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Fecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Observacion" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="FechaInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FechaFin" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_TECNICOS_X_ORDEN_TRABAJO_Result">
+    <Property Type="Int32" Name="CodigoEmpleado" Nullable="false" />
+    <Property Type="Int32" Name="CodigoOrdenTrabajo" Nullable="false" />
+    <Property Type="String" Name="NOMBRES_APELLIDOS" Nullable="false" MaxLength="152" />
+  </ComplexType>
+  <ComplexType Name="USP_CONSULTAR_OT_Result">
+    <Property Type="Int32" Name="CodigoOrdenTrabajo" Nullable="false" />
+    <Property Type="Int32" Name="CodigoFichaMantenimiento" Nullable="false" />
+    <Property Type="String" Name="Fecha" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Observacion" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="FechaInicio" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FechaFin" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="UsuarioActualizacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaHoraActualizacion" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EstadoRegistro" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

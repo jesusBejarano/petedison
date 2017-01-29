@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01EFE64D-718C-48F4-A42B-B7C1903248AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pet.Entity</RootNamespace>
+    <AssemblyName>Pet.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACI_Chip.cs" />
+    <Compile Include="ACI_Chip_OrdenAtencion.cs" />
+    <Compile Include="ACI_OrdenAtencion.cs" />
+    <Compile Include="Actividades.cs" />
+    <Compile Include="ActividadesxFichaMantenimiento.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Cartilla_Atencion.cs" />
+    <Compile Include="CENotificaSolicitud.cs" />
+    <Compile Include="CE_AprobadorPorArea.cs" />
+    <Compile Include="CE_Cliente.cs" />
+    <Compile Include="CE_ComprobantePago.cs" />
+    <Compile Include="CE_Empleado.cs" />
+    <Compile Include="CE_EmpleadoPorArea.cs" />
+    <Compile Include="CE_Estado.cs" />
+    <Compile Include="CE_Paciente.cs" />
+    <Compile Include="CE_Prioridad.cs" />
+    <Compile Include="CE_Sede.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Comprobante_Examen.cs" />
+    <Compile Include="Comprobante_Pago.cs" />
+    <Compile Include="Detalle_Atencion.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Equipo_Sede.cs" />
+    <Compile Include="Especialidad.cs" />
+    <Compile Include="EstadoFichaMantenimiento.cs" />
+    <Compile Include="EstadoOrdenTrabajo.cs" />
+    <Compile Include="EstadoSolicitud.cs" />
+    <Compile Include="EstatusSolicitud.cs" />
+    <Compile Include="Examen.cs" />
+    <Compile Include="FichaMantenimiento.cs" />
+    <Compile Include="GEL_CartillaAtencion.cs" />
+    <Compile Include="GEL_ComprobanteExamen.cs" />
+    <Compile Include="GEL_DetalleAtencion.cs" />
+    <Compile Include="GEL_EquipoSede.cs" />
+    <Compile Include="GEL_Examen.cs" />
+    <Compile Include="GPCDetalleDeSolicitud.cs" />
+    <Compile Include="GPC_DetalleDeSolicitud.cs" />
+    <Compile Include="GPC_HistoricoDeSolicitud.cs" />
+    <Compile Include="GPC_Notificador.cs" />
+    <Compile Include="GPC_Recurso.cs" />
+    <Compile Include="GPC_Solicitud.cs" />
+    <Compile Include="GS_Usuario.cs" />
+    <Compile Include="InformeTecnico.cs" />
+    <Compile Include="IPet\IRepository.cs" />
+    <Compile Include="IPet\IUnitOfWork.cs" />
+    <Compile Include="Mantenimiento.cs" />
+    <Compile Include="Materiales.cs" />
+    <Compile Include="MaterialesxFichaMantenimiento.cs" />
+    <Compile Include="OrdenTrabajo.cs" />
+    <Compile Include="Paciente.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sede.cs" />
+    <Compile Include="Tecnico.cs" />
+    <Compile Include="TipoMantenimiento.cs" />
+    <Compile Include="USP_CONSULTAR_AREA_Result.cs" />
+    <Compile Include="USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO_Result.cs" />
+    <Compile Include="USP_CONSULTAR_ESTADO_SOLICITUD_Result.cs" />
+    <Compile Include="USP_CONSULTAR_SEDE_Result.cs" />
+    <Compile Include="USP_CONSULTAR_TIPO_MANTENIMINETO_Result.cs" />
+    <Compile Include="USP_CONSULTA_ACTIVIDAD_Result.cs" />
+    <Compile Include="USP_GETMANTENIMIENTO_Result.cs" />
+    <Compile Include="USP_GETSOLICITUD_Result.cs" />
+    <Compile Include="USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO_Result.cs" />
+    <Compile Include="USP_GET_FICHAMANTENIMIENTO_Result.cs" />
+    <Compile Include="USP_GET_MATERIALES_X_FICHAMANTENIMIENTO_Result.cs" />
+    <Compile Include="Usuarios.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

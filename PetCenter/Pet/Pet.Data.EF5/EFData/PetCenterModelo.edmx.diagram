@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="673b63975d7b4aae83ee38b9335bea55" Name="Diagrama1" ZoomLevel="79">
+        <EntityTypeShape EntityType="PET_DBModel.ACI_Chip" Width="1.5" PointX="9.91050340324198" PointY="14.460204920945785" />
+        <EntityTypeShape EntityType="PET_DBModel.ACI_Chip_OrdenAtencion" Width="1.5" PointX="4.7184346004940734" PointY="20.988751391409316" />
+        <EntityTypeShape EntityType="PET_DBModel.ACI_OrdenAtencion" Width="1.5" PointX="8.3346566727080642" PointY="5.158123316782584" />
+        <EntityTypeShape EntityType="PET_DBModel.Actividades" Width="1.5" PointX="9.4129277418427773" PointY="11.903358822643458" />
+        <EntityTypeShape EntityType="PET_DBModel.ActividadesxFichaMantenimiento" Width="1.5" PointX="9.793461971820081" PointY="24.971788775628333" />
+        <EntityTypeShape EntityType="PET_DBModel.Area" Width="1.5" PointX="2.2431740808501721" PointY="17.585338094078626" />
+        <EntityTypeShape EntityType="PET_DBModel.Cartilla_Atencion" Width="1.5" PointX="4.3655786329720074" PointY="27.528768090311797" />
+        <EntityTypeShape EntityType="PET_DBModel.CE_AprobadorPorArea" Width="1.5" PointX="6.574540087289428" PointY="16.120663903709811" />
+        <EntityTypeShape EntityType="PET_DBModel.CE_EmpleadoPorArea" Width="1.5" PointX="3.3942835030119323" PointY="9.9039660440310673" />
+        <EntityTypeShape EntityType="PET_DBModel.CE_Estado" Width="1.5" PointX="7.0794194094275209" PointY="16.589374117827681" />
+        <EntityTypeShape EntityType="PET_DBModel.CE_Prioridad" Width="1.5" PointX="10.855436229545362" PointY="29.129092349265278" />
+        <EntityTypeShape EntityType="PET_DBModel.Cliente" Width="1.5" PointX="6.8799731968343139" PointY="16.664530478727318" />
+        <EntityTypeShape EntityType="PET_DBModel.Comprobante_Examen" Width="1.5" PointX="7.8914511929692006" PointY="25.659450021413829" />
+        <EntityTypeShape EntityType="PET_DBModel.Comprobante_Pago" Width="1.5" PointX="9.6971168730860189" PointY="17.081390835848353" />
+        <EntityTypeShape EntityType="PET_DBModel.Detalle_Atencion" Width="1.5" PointX="7.380713266963471" PointY="8.41121349130348" />
+        <EntityTypeShape EntityType="PET_DBModel.Empleado" Width="1.5" PointX="2.75" PointY="5.125" />
+        <EntityTypeShape EntityType="PET_DBModel.Equipo_Sede" Width="1.5" PointX="4.36468033882076" PointY="6.333032715289403" />
+        <EntityTypeShape EntityType="PET_DBModel.Especialidad" Width="1.5" PointX="5.5315151836404182" PointY="12.501601105789469" />
+        <EntityTypeShape EntityType="PET_DBModel.EstadoFichaMantenimiento" Width="1.5" PointX="6.5798278667870118" PointY="5.4872051651995655" />
+        <EntityTypeShape EntityType="PET_DBModel.EstadoOrdenTrabajo" Width="1.5" PointX="6.87726814433805" PointY="11.766792883987908" />
+        <EntityTypeShape EntityType="PET_DBModel.EstadoSolicitud" Width="1.5" PointX="2.454955806236228" PointY="10.069201965848544" />
+        <EntityTypeShape EntityType="PET_DBModel.Examen" Width="1.5" PointX="4.4215050323035126" PointY="31.179613291835231" />
+        <EntityTypeShape EntityType="PET_DBModel.FichaMantenimiento" Width="1.5" PointX="11.965619908629739" PointY="10.598455895948437" />
+        <EntityTypeShape EntityType="PET_DBModel.InformeTecnico" Width="1.5" PointX="3.1305791508083134" PointY="29.29891672604667" />
+        <EntityTypeShape EntityType="PET_DBModel.Mantenimiento" Width="1.5" PointX="10.542603648520355" PointY="27.917961789256875" />
+        <EntityTypeShape EntityType="PET_DBModel.Materiales" Width="1.5" PointX="11.979330578809293" PointY="28.566301105807675" />
+        <EntityTypeShape EntityType="PET_DBModel.MaterialesxFichaMantenimiento" Width="1.5" PointX="4.23717937070745" PointY="8.0197498090657167" />
+        <EntityTypeShape EntityType="PET_DBModel.OrdenTrabajo" Width="1.5" PointX="9.0830462915278254" PointY="17.704685100216736" />
+        <EntityTypeShape EntityType="PET_DBModel.Sede" Width="1.5" PointX="0.625" PointY="4" />
+        <EntityTypeShape EntityType="PET_DBModel.Tecnico" Width="1.5" PointX="13.125" PointY="3.5" />
+        <EntityTypeShape EntityType="PET_DBModel.TipoMantenimiento" Width="1.5" PointX="8.8367191221736" PointY="7.1116588744854825" />
+        <AssociationConnector Association="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_Chip" />
+        <AssociationConnector Association="PET_DBModel.FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion" />
+        <AssociationConnector Association="PET_DBModel.ActividadesxFichaMantenimiento_Actividades_FK" />
+        <AssociationConnector Association="PET_DBModel.ActividadesxFichaMantenimiento_FichaMantenimiento_FK" />
+        <AssociationConnector Association="PET_DBModel.Empleado_Area_FK" />
+        <AssociationConnector Association="PET_DBModel.fk_id_cliente_atencion" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_cartilla_de_atencion" />
+        <AssociationConnector Association="PET_DBModel.fk_id_empleado_atencion" />
+        <AssociationConnector Association="PET_DBModel.fk_id_cliente_pago" />
+        <AssociationConnector Association="PET_DBModel.fk_id_id_comprobante" />
+        <AssociationConnector Association="PET_DBModel.fk_id_tipo_examen" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_empleado" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_empleado_equipo" />
+        <AssociationConnector Association="PET_DBModel.fk_id_det_tipo_examen" />
+        <AssociationConnector Association="PET_DBModel.Tecnico_Empleado_FK" />
+        <AssociationConnector Association="PET_DBModel.fk_id_equipo_sede" />
+        <AssociationConnector Association="PET_DBModel.Tecnico_Especialidad_FK" />
+        <AssociationConnector Association="PET_DBModel.FK_OrdenTrabajo_EstadoOrdenTrabajo" />
+        <AssociationConnector Association="PET_DBModel.FichaMantenimiento_Mantenimiento_FK" />
+        <AssociationConnector Association="PET_DBModel.MaterialesxFichaMantenimiento_FichaMantenimiento_FK" />
+        <AssociationConnector Association="PET_DBModel.OrdenTrabajo_FichaMantenimiento_FK" />
+        <AssociationConnector Association="PET_DBModel.InformeTecnico_OrdenTrabajo_FK" />
+        <AssociationConnector Association="PET_DBModel.MaterialesxFichaMantenimiento_Materiales_FK" />
+        <AssociationConnector Association="PET_DBModel.TecnicosxOrdenTrabajo" />
+        <EntityTypeShape EntityType="PET_DBModel.GPC_DetalleDeSolicitud" Width="2.125" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PET_DBModel.GPC_HistoricoDeSolicitud" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PET_DBModel.GPC_Notificador" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PET_DBModel.GPC_Recurso" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PET_DBModel.GPC_Solicitud" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PET_DBModel.Solicitud" Width="1.5" PointX="14.25" PointY="8.25" />
+        <AssociationConnector Association="PET_DBModel.Solicitud_Area_FK" />
+        <AssociationConnector Association="PET_DBModel.Solicitud_Empleado_FK" />
+        <AssociationConnector Association="PET_DBModel.Solicitud_Empleado_FKv1" />
+        <AssociationConnector Association="PET_DBModel.FK_Solicitud_EstadoSolicitud" />
+        <AssociationConnector Association="PET_DBModel.FK_Solicitud_Sede" />
+        <AssociationConnector Association="PET_DBModel.Solicitud_TipoMantenimiento_FK" />
+        <AssociationConnector Association="PET_DBModel.R_5" />
+        <AssociationConnector Association="PET_DBModel.R_4" />
+        <AssociationConnector Association="PET_DBModel.R_3" />
+        <AssociationConnector Association="PET_DBModel.R_1" />
+        <AssociationConnector Association="PET_DBModel.R_2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

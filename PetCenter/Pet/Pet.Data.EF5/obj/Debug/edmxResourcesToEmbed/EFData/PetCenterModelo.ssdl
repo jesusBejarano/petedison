@@ -1,0 +1,1303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PET_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACI_Chip">
+    <Key>
+      <PropertyRef Name="idChip" />
+    </Key>
+    <Property Name="idChip" Type="int" Nullable="false" />
+    <Property Name="nombreChip" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ACI_Chip_OrdenAtencion">
+    <Key>
+      <PropertyRef Name="idChipOrdenAtencion" />
+    </Key>
+    <Property Name="idChipOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="idOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="idChip" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ACI_OrdenAtencion">
+    <Key>
+      <PropertyRef Name="idOrdenAtencion" />
+    </Key>
+    <Property Name="idOrdenAtencion" Type="int" Nullable="false" />
+    <Property Name="id_paciente" Type="int" Nullable="false" />
+    <Property Name="estadoAtencion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fechaOrdenAtencion" Type="date" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="100" />
+    <Property Name="chipImplantado" Type="bit" Nullable="false" />
+    <Property Name="motivoImplantacion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Actividades">
+    <Key>
+      <PropertyRef Name="CodigoActividad" />
+    </Key>
+    <Property Name="CodigoActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="70" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="ActividadesxFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoActividadxFichaMantenimiento" />
+    </Key>
+    <Property Name="CodigoActividadxFichaMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="CodigoFichaMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoActividad" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+    </Key>
+    <Property Name="CodigoArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoSede" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="Cartilla_Atencion">
+    <Key>
+      <PropertyRef Name="id_cartilla_atencion" />
+    </Key>
+    <Property Name="id_cartilla_atencion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="id_paciente" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="30" />
+    <Property Name="fecha_creacion" Type="datetime" />
+    <Property Name="estado_cartilla" Type="varchar" MaxLength="50" />
+    <Property Name="numero_comprobante" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CE_AprobadorPorArea">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="prioridad" Type="int" />
+  </EntityType>
+  <EntityType Name="CE_EmpleadoPorArea">
+    <Key>
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CE_Estado">
+    <Key>
+      <PropertyRef Name="codigo_estado" />
+    </Key>
+    <Property Name="codigo_estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion_estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CE_Prioridad">
+    <Key>
+      <PropertyRef Name="codigo_prioridad" />
+    </Key>
+    <Property Name="codigo_prioridad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion_prioridad" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_cliente" />
+    </Key>
+    <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dni" Type="varchar" MaxLength="8" />
+    <Property Name="apellido_paterno" Type="varchar" MaxLength="50" />
+    <Property Name="apellido_materno" Type="varchar" MaxLength="50" />
+    <Property Name="nombres" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="1" />
+    <Property Name="direccion" Type="varchar" MaxLength="120" />
+    <Property Name="telefono_casa" Type="varchar" MaxLength="10" />
+    <Property Name="celular" Type="varchar" MaxLength="12" />
+    <Property Name="correo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Comprobante_Examen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_comprobante" Type="int" Nullable="false" />
+    <Property Name="id_tipo_examen" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comprobante_Pago">
+    <Key>
+      <PropertyRef Name="id_comprobante" />
+    </Key>
+    <Property Name="id_comprobante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cliente" Type="int" Nullable="false" />
+    <Property Name="id_paciente" Type="int" Nullable="false" />
+    <Property Name="numero_comprobante" Type="varchar" MaxLength="30" />
+    <Property Name="monto_total" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_creacion" Type="datetime" />
+    <Property Name="tipo_comprobante" Type="varchar" MaxLength="30" />
+    <Property Name="forma_pago" Type="varchar" MaxLength="30" />
+    <Property Name="estado_comprobante" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Detalle_Atencion">
+    <Key>
+      <PropertyRef Name="id_detalle" />
+    </Key>
+    <Property Name="id_detalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_cartilla_atencion" Type="int" Nullable="false" />
+    <Property Name="id_tipo_examen" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado" Type="int" />
+    <Property Name="especificacion_examen" Type="varchar" MaxLength="130" />
+    <Property Name="estado_examen_atencion" Type="varchar" MaxLength="50" />
+    <Property Name="id_equipo" Type="int" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Name="CodigoEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" Nullable="false" />
+    <Property Name="dni" Type="varchar" MaxLength="20" />
+    <Property Name="especialidad" Type="varchar" MaxLength="50" />
+    <Property Name="sexo" Type="varchar" MaxLength="1" />
+    <Property Name="direccion" Type="varchar" MaxLength="200" />
+    <Property Name="fecha_nacimiento" Type="date" />
+    <Property Name="telefono_casa" Type="varchar" MaxLength="30" />
+    <Property Name="celular" Type="varchar" MaxLength="30" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" />
+    <Property Name="id_supervisor" Type="int" />
+    <Property Name="id_sede" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipo_Sede">
+    <Key>
+      <PropertyRef Name="id_equipo" />
+    </Key>
+    <Property Name="id_equipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodigoSede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Especialidad">
+    <Key>
+      <PropertyRef Name="CodigoEspecialidad" />
+    </Key>
+    <Property Name="CodigoEspecialidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="EstadoFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoEstadoFichaMantenimiento" />
+    </Key>
+    <Property Name="CodigoEstadoFichaMantenimiento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoOrdenTrabajo">
+    <Key>
+      <PropertyRef Name="CodigoEstadoOrdenTrabajo" />
+    </Key>
+    <Property Name="CodigoEstadoOrdenTrabajo" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstadoSolicitud">
+    <Key>
+      <PropertyRef Name="CodigoEstadoSolicitud" />
+    </Key>
+    <Property Name="CodigoEstadoSolicitud" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="id_tipo_examen" />
+    </Key>
+    <Property Name="id_tipo_examen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_examen" Type="varchar" MaxLength="20" />
+    <Property Name="fecha_creacion" Type="date" />
+  </EntityType>
+  <EntityType Name="FichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoFichaMantenimiento" />
+    </Key>
+    <Property Name="CodigoFichaMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoSolicitud" Type="int" Nullable="false" />
+    <Property Name="CodigoTipoMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFin" Type="datetime" Nullable="false" />
+    <Property Name="CantidadTecnicos" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaHoraCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" Nullable="false" />
+    <Property Name="CodigoSede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GPC_DetalleDeSolicitud">
+    <Key>
+      <PropertyRef Name="item" />
+      <PropertyRef Name="numero_solicitud" />
+    </Key>
+    <Property Name="item" Type="int" Nullable="false" />
+    <Property Name="cantidad_solicitada" Type="float" />
+    <Property Name="cantidad_aprobada" Type="float" />
+    <Property Name="cantidad_atendida" Type="float" />
+    <Property Name="codigo_recurso" Type="int" />
+    <Property Name="numero_solicitud" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GPC_HistoricoDeSolicitud">
+    <Key>
+      <PropertyRef Name="codigo_historia" />
+    </Key>
+    <Property Name="codigo_historia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero_solicitud" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_operacion" Type="datetime" />
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="codigo_estado" Type="int" />
+  </EntityType>
+  <EntityType Name="GPC_Notificador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="De" Type="varchar" MaxLength="100" />
+    <Property Name="Para" Type="varchar" MaxLength="1000" />
+    <Property Name="Asunto" Type="varchar" MaxLength="1000" />
+    <Property Name="Texto" Type="varchar" MaxLength="1000" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="GPC_Recurso">
+    <Key>
+      <PropertyRef Name="codigo_recurso" />
+    </Key>
+    <Property Name="codigo_recurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_recurso" Type="varchar" MaxLength="200" />
+    <Property Name="unidad_medida" Type="varchar" MaxLength="20" />
+    <Property Name="unidad_compra" Type="varchar" MaxLength="20" />
+    <Property Name="precio_unitario" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="moneda" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GPC_Solicitud">
+    <Key>
+      <PropertyRef Name="numero_solicitud" />
+    </Key>
+    <Property Name="numero_solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha_hora" Type="datetime" />
+    <Property Name="observacion" Type="varchar(max)" />
+    <Property Name="codigoEmpleado" Type="int" />
+    <Property Name="codigo_prioridad" Type="int" />
+    <Property Name="codigo_estado" Type="int" />
+    <Property Name="codigo_solicitud" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="codigo_aprobador" Type="int" />
+  </EntityType>
+  <EntityType Name="InformeTecnico">
+    <Key>
+      <PropertyRef Name="CodigoInformeTecnico" />
+    </Key>
+    <Property Name="CodigoInformeTecnico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoOrdenTrabajo" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="Mantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoMantenimiento" />
+      <PropertyRef Name="CodigoSolicitud" />
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+      <PropertyRef Name="CodigoArea" />
+    </Key>
+    <Property Name="CodigoMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="CodigoSolicitud" Type="int" Nullable="false" />
+    <Property Name="CodigoTipoMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+    <Property Name="CodigoSede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Materiales">
+    <Key>
+      <PropertyRef Name="CodigoMaterial" />
+    </Key>
+    <Property Name="CodigoMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="MaterialesxFichaMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoMaterialxFichaMantenimiento" />
+    </Key>
+    <Property Name="CodigoMaterialxFichaMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="CodigoFichaMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoMaterial" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenTrabajo">
+    <Key>
+      <PropertyRef Name="CodigoOrdenTrabajo" />
+    </Key>
+    <Property Name="CodigoOrdenTrabajo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoFichaMantenimiento" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Descripcion" Type="text" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFin" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaHoraCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="CodigoSede" />
+    </Key>
+    <Property Name="CodigoSede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="25" />
+    <Property Name="Direccion" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="15" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="CodigoSolicitud" />
+      <PropertyRef Name="CodigoArea" />
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+      <PropertyRef Name="CodigoSede" />
+    </Key>
+    <Property Name="CodigoSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="CodigoArea" Type="int" Nullable="false" />
+    <Property Name="CodigoTipoMantenimiento" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado1" Type="int" Nullable="false" />
+    <Property Name="CodigoEmpleado2" Type="int" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaHoraCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+    <Property Name="CodigoSede" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tecnico">
+    <Key>
+      <PropertyRef Name="CodigoEmpleado" />
+    </Key>
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="CodigoTecnico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoEspecialidad" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <EntityType Name="TecnicosxOrdenTrabajo">
+    <Key>
+      <PropertyRef Name="CodigoEmpleado" />
+      <PropertyRef Name="CodigoOrdenTrabajo" />
+    </Key>
+    <Property Name="CodigoEmpleado" Type="int" Nullable="false" />
+    <Property Name="CodigoOrdenTrabajo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoMantenimiento">
+    <Key>
+      <PropertyRef Name="CodigoTipoMantenimiento" />
+    </Key>
+    <Property Name="CodigoTipoMantenimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraCreacion" Type="datetime" />
+    <Property Name="UsuarioActualizacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaHoraActualizacion" Type="datetime" />
+    <Property Name="EstadoRegistro" Type="bit" />
+  </EntityType>
+  <Association Name="ActividadesxFichaMantenimiento_Actividades_FK">
+    <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
+    <End Role="ActividadesxFichaMantenimiento" Type="Self.ActividadesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividades">
+        <PropertyRef Name="CodigoActividad" />
+      </Principal>
+      <Dependent Role="ActividadesxFichaMantenimiento">
+        <PropertyRef Name="CodigoActividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActividadesxFichaMantenimiento_FichaMantenimiento_FK">
+    <End Role="FichaMantenimiento" Type="Self.FichaMantenimiento" Multiplicity="1" />
+    <End Role="ActividadesxFichaMantenimiento" Type="Self.ActividadesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="ActividadesxFichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Empleado_Area_FK">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FichaMantenimiento_Mantenimiento_FK">
+    <End Role="Mantenimiento" Type="Self.Mantenimiento" Multiplicity="1" />
+    <End Role="FichaMantenimiento" Type="Self.FichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mantenimiento">
+        <PropertyRef Name="CodigoMantenimiento" />
+        <PropertyRef Name="CodigoSolicitud" />
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoMantenimiento" />
+        <PropertyRef Name="CodigoSolicitud" />
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACI_Chip_OrdenAtencion_ACI_Chip">
+    <End Role="ACI_Chip" Type="Self.ACI_Chip" Multiplicity="1" />
+    <End Role="ACI_Chip_OrdenAtencion" Type="Self.ACI_Chip_OrdenAtencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACI_Chip">
+        <PropertyRef Name="idChip" />
+      </Principal>
+      <Dependent Role="ACI_Chip_OrdenAtencion">
+        <PropertyRef Name="idChip" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion">
+    <End Role="ACI_OrdenAtencion" Type="Self.ACI_OrdenAtencion" Multiplicity="1" />
+    <End Role="ACI_Chip_OrdenAtencion" Type="Self.ACI_Chip_OrdenAtencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ACI_OrdenAtencion">
+        <PropertyRef Name="idOrdenAtencion" />
+      </Principal>
+      <Dependent Role="ACI_Chip_OrdenAtencion">
+        <PropertyRef Name="idOrdenAtencion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASS_116">
+    <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="1" />
+    <End Role="TecnicosxOrdenTrabajo" Type="Self.TecnicosxOrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnico">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="TecnicosxOrdenTrabajo">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ASS_117">
+    <End Role="OrdenTrabajo" Type="Self.OrdenTrabajo" Multiplicity="1" />
+    <End Role="TecnicosxOrdenTrabajo" Type="Self.TecnicosxOrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenTrabajo">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Principal>
+      <Dependent Role="TecnicosxOrdenTrabajo">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_cliente_atencion">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Cartilla_Atencion" Type="Self.Cartilla_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Cartilla_Atencion">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_cliente_pago">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Comprobante_Pago" Type="Self.Comprobante_Pago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="id_cliente" />
+      </Principal>
+      <Dependent Role="Comprobante_Pago">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_cartilla_de_atencion">
+    <End Role="Cartilla_Atencion" Type="Self.Cartilla_Atencion" Multiplicity="1" />
+    <End Role="Detalle_Atencion" Type="Self.Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cartilla_Atencion">
+        <PropertyRef Name="id_cartilla_atencion" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_cartilla_atencion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Detalle_Atencion" Type="Self.Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_empleado_equipo">
+    <End Role="Equipo_Sede" Type="Self.Equipo_Sede" Multiplicity="0..1" />
+    <End Role="Detalle_Atencion" Type="Self.Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipo_Sede">
+        <PropertyRef Name="id_equipo" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_equipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_det_tipo_examen">
+    <End Role="Examen" Type="Self.Examen" Multiplicity="1" />
+    <End Role="Detalle_Atencion" Type="Self.Detalle_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Principal>
+      <Dependent Role="Detalle_Atencion">
+        <PropertyRef Name="id_tipo_examen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_empleado_atencion">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Cartilla_Atencion" Type="Self.Cartilla_Atencion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Cartilla_Atencion">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_equipo_sede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+    <End Role="Equipo_Sede" Type="Self.Equipo_Sede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Principal>
+      <Dependent Role="Equipo_Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_id_comprobante">
+    <End Role="Comprobante_Pago" Type="Self.Comprobante_Pago" Multiplicity="1" />
+    <End Role="Comprobante_Examen" Type="Self.Comprobante_Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprobante_Pago">
+        <PropertyRef Name="id_comprobante" />
+      </Principal>
+      <Dependent Role="Comprobante_Examen">
+        <PropertyRef Name="id_comprobante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_tipo_examen">
+    <End Role="Examen" Type="Self.Examen" Multiplicity="1" />
+    <End Role="Comprobante_Examen" Type="Self.Comprobante_Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Principal>
+      <Dependent Role="Comprobante_Examen">
+        <PropertyRef Name="id_tipo_examen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrdenTrabajo_EstadoOrdenTrabajo">
+    <End Role="EstadoOrdenTrabajo" Type="Self.EstadoOrdenTrabajo" Multiplicity="1" />
+    <End Role="OrdenTrabajo" Type="Self.OrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoOrdenTrabajo">
+        <PropertyRef Name="CodigoEstadoOrdenTrabajo" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_EstadoSolicitud">
+    <End Role="EstadoSolicitud" Type="Self.EstadoSolicitud" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoSolicitud">
+        <PropertyRef Name="CodigoEstadoSolicitud" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Sede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="CodigoSede" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoSede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InformeTecnico_OrdenTrabajo_FK">
+    <End Role="OrdenTrabajo" Type="Self.OrdenTrabajo" Multiplicity="1" />
+    <End Role="InformeTecnico" Type="Self.InformeTecnico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenTrabajo">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Principal>
+      <Dependent Role="InformeTecnico">
+        <PropertyRef Name="CodigoOrdenTrabajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaterialesxFichaMantenimiento_FichaMantenimiento_FK">
+    <End Role="FichaMantenimiento" Type="Self.FichaMantenimiento" Multiplicity="1" />
+    <End Role="MaterialesxFichaMantenimiento" Type="Self.MaterialesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="MaterialesxFichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MaterialesxFichaMantenimiento_Materiales_FK">
+    <End Role="Materiales" Type="Self.Materiales" Multiplicity="1" />
+    <End Role="MaterialesxFichaMantenimiento" Type="Self.MaterialesxFichaMantenimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materiales">
+        <PropertyRef Name="CodigoMaterial" />
+      </Principal>
+      <Dependent Role="MaterialesxFichaMantenimiento">
+        <PropertyRef Name="CodigoMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrdenTrabajo_FichaMantenimiento_FK">
+    <End Role="FichaMantenimiento" Type="Self.FichaMantenimiento" Multiplicity="1" />
+    <End Role="OrdenTrabajo" Type="Self.OrdenTrabajo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaMantenimiento">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Principal>
+      <Dependent Role="OrdenTrabajo">
+        <PropertyRef Name="CodigoFichaMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_1">
+    <End Role="GPC_Recurso" Type="Self.GPC_Recurso" Multiplicity="0..1" />
+    <End Role="GPC_DetalleDeSolicitud" Type="Self.GPC_DetalleDeSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GPC_Recurso">
+        <PropertyRef Name="codigo_recurso" />
+      </Principal>
+      <Dependent Role="GPC_DetalleDeSolicitud">
+        <PropertyRef Name="codigo_recurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_2">
+    <End Role="GPC_Solicitud" Type="Self.GPC_Solicitud" Multiplicity="1" />
+    <End Role="GPC_DetalleDeSolicitud" Type="Self.GPC_DetalleDeSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GPC_Solicitud">
+        <PropertyRef Name="numero_solicitud" />
+      </Principal>
+      <Dependent Role="GPC_DetalleDeSolicitud">
+        <PropertyRef Name="numero_solicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_3">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="GPC_Solicitud" Type="Self.GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_4">
+    <End Role="CE_Prioridad" Type="Self.CE_Prioridad" Multiplicity="0..1" />
+    <End Role="GPC_Solicitud" Type="Self.GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CE_Prioridad">
+        <PropertyRef Name="codigo_prioridad" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigo_prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="R_5">
+    <End Role="CE_Estado" Type="Self.CE_Estado" Multiplicity="0..1" />
+    <End Role="GPC_Solicitud" Type="Self.GPC_Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CE_Estado">
+        <PropertyRef Name="codigo_estado" />
+      </Principal>
+      <Dependent Role="GPC_Solicitud">
+        <PropertyRef Name="codigo_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_Area_FK">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="CodigoArea" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_Empleado_FK">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoEmpleado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_Empleado_FKv1">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoEmpleado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Solicitud_TipoMantenimiento_FK">
+    <End Role="TipoMantenimiento" Type="Self.TipoMantenimiento" Multiplicity="1" />
+    <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMantenimiento">
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="CodigoTipoMantenimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tecnico_Empleado_FK">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Principal>
+      <Dependent Role="Tecnico">
+        <PropertyRef Name="CodigoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tecnico_Especialidad_FK">
+    <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1" />
+    <End Role="Tecnico" Type="Self.Tecnico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidad">
+        <PropertyRef Name="CodigoEspecialidad" />
+      </Principal>
+      <Dependent Role="Tecnico">
+        <PropertyRef Name="CodigoEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ActualizaSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+    <Parameter Name="fecha_hora" Type="datetime" Mode="In" />
+    <Parameter Name="codigo_empleado" Type="int" Mode="In" />
+    <Parameter Name="codigo_prioridad" Type="int" Mode="In" />
+    <Parameter Name="codigo_estado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aprueba_detalle_solicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+    <Parameter Name="item" Type="int" Mode="In" />
+    <Parameter Name="cantidad_aprobada" Type="int" Mode="In" />
+  </Function>
+  <Function Name="aprueba_rechaza_solicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+    <Parameter Name="codigo_estado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="datos_notificacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EliminaSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EnviaSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Estado_Solicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="RegistraDetalleSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="item" Type="int" Mode="In" />
+    <Parameter Name="cantidad_solicitada" Type="int" Mode="In" />
+    <Parameter Name="codigo_recurso" Type="int" Mode="In" />
+    <Parameter Name="numero_solicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegistraSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha_hora" Type="datetime" Mode="In" />
+    <Parameter Name="codigo_empleado" Type="int" Mode="In" />
+    <Parameter Name="codigo_prioridad" Type="int" Mode="In" />
+    <Parameter Name="codigo_estado" Type="int" Mode="In" />
+    <Parameter Name="numero_solicitud" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_CONSULTA_ACTIVIDAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DescripcionActividad" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_CONSULTA_FICHA_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="DescripcionFicha" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoTipoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="EstadoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoSede" Type="int" Mode="In" />
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_CONSULTA_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+    <Parameter Name="DescripcionSolicitud" Type="varchar" Mode="In" />
+    <Parameter Name="DescripcionMantenimiento" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoTipoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoSede" Type="int" Mode="In" />
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_CONSULTA_MATERIAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DescripcionMaterial" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_CONSULTA_SOLICITUDES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoTipoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="CodigoSede" Type="int" Mode="In" />
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_CONSULTAR_AREA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_CONSULTAR_ESTADO_SOLICITUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_CONSULTAR_SEDE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_CONSULTAR_TIPO_MANTENIMINETO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GET_FICHAMANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GET_MATERIALES_X_FICHAMANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GETMANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GETSOLICITUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_REGISTRAR_ACTIVIDAD_X_FICHA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoActividadxFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoActividad" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+  </Function>
+  <Function Name="USP_REGISTRAR_FICHA_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoEmpleado" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="CantidadTecnicos" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioRegistro" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+    <Parameter Name="CodigoFichaMantenimientoOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="USP_REGISTRAR_MANTENIMIENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+  </Function>
+  <Function Name="USP_REGISTRAR_MATERIAL_X_FICHA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoMaterialxFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Cantidad" Type="int" Mode="In" />
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoMaterial" Type="int" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+  </Function>
+  <Function Name="USP_REGISTRAR_SOLICITUD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoSolicitud" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="CodigoSede" Type="int" Mode="In" />
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+    <Parameter Name="CodigoTipoMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="CodigoEmpleado1" Type="int" Mode="In" />
+    <Parameter Name="UsuarioRegistro" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+    <Parameter Name="CodigoSolicitudOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="USP_CONSULTAR_OT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="DescripcionOT" Type="varchar" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="Sede" Type="int" Mode="In" />
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_COSULTAR_TECNICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="NOMBRES" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_GET_ORDEN_TRABAJO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="CodigoOrdenTrabajo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GET_TECNICOS_X_ORDEN_TRABAJO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="CodigoOrdenTrabajo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_REGISTRAR_ORDEN_TRABAJO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="CodigoOrdenTrabajo" Type="int" Mode="In" />
+    <Parameter Name="CodigoFichaMantenimiento" Type="int" Mode="In" />
+    <Parameter Name="Fecha" Type="varchar" Mode="In" />
+    <Parameter Name="Observacion" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="text" Mode="In" />
+    <Parameter Name="FechaInicio" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFin" Type="varchar" Mode="In" />
+    <Parameter Name="Estado" Type="int" Mode="In" />
+    <Parameter Name="UsuarioCreacion" Type="varchar" Mode="In" />
+    <Parameter Name="Accion" Type="char" Mode="In" />
+    <Parameter Name="CodigoFichaMantenimientoOUT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="USP_REGISTRAR_TECNICOS_X_OT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MANTENIMIENTO">
+    <Parameter Name="CodigoEmpleado" Type="int" Mode="In" />
+    <Parameter Name="CodigoOrdenTrabajo" Type="int" Mode="In" />
+    <Parameter Name="Opcion" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="PET_DBModelStoreContainer">
+    <EntitySet Name="ACI_Chip" EntityType="Self.ACI_Chip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACI_Chip_OrdenAtencion" EntityType="Self.ACI_Chip_OrdenAtencion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ACI_OrdenAtencion" EntityType="Self.ACI_OrdenAtencion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActividadesxFichaMantenimiento" EntityType="Self.ActividadesxFichaMantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cartilla_Atencion" EntityType="Self.Cartilla_Atencion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CE_AprobadorPorArea" EntityType="Self.CE_AprobadorPorArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CE_EmpleadoPorArea" EntityType="Self.CE_EmpleadoPorArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CE_Estado" EntityType="Self.CE_Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CE_Prioridad" EntityType="Self.CE_Prioridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comprobante_Examen" EntityType="Self.Comprobante_Examen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comprobante_Pago" EntityType="Self.Comprobante_Pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalle_Atencion" EntityType="Self.Detalle_Atencion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipo_Sede" EntityType="Self.Equipo_Sede" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoFichaMantenimiento" EntityType="Self.EstadoFichaMantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoOrdenTrabajo" EntityType="Self.EstadoOrdenTrabajo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstadoSolicitud" EntityType="Self.EstadoSolicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Examen" EntityType="Self.Examen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FichaMantenimiento" EntityType="Self.FichaMantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPC_DetalleDeSolicitud" EntityType="Self.GPC_DetalleDeSolicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPC_HistoricoDeSolicitud" EntityType="Self.GPC_HistoricoDeSolicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPC_Notificador" EntityType="Self.GPC_Notificador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPC_Recurso" EntityType="Self.GPC_Recurso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GPC_Solicitud" EntityType="Self.GPC_Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InformeTecnico" EntityType="Self.InformeTecnico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mantenimiento" EntityType="Self.Mantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Materiales" EntityType="Self.Materiales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaterialesxFichaMantenimiento" EntityType="Self.MaterialesxFichaMantenimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenTrabajo" EntityType="Self.OrdenTrabajo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sede" EntityType="Self.Sede" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tecnico" EntityType="Self.Tecnico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TecnicosxOrdenTrabajo" EntityType="Self.TecnicosxOrdenTrabajo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoMantenimiento" EntityType="Self.TipoMantenimiento" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="ActividadesxFichaMantenimiento_Actividades_FK" Association="Self.ActividadesxFichaMantenimiento_Actividades_FK">
+      <End Role="Actividades" EntitySet="Actividades" />
+      <End Role="ActividadesxFichaMantenimiento" EntitySet="ActividadesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="ActividadesxFichaMantenimiento_FichaMantenimiento_FK" Association="Self.ActividadesxFichaMantenimiento_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="ActividadesxFichaMantenimiento" EntitySet="ActividadesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="Empleado_Area_FK" Association="Self.Empleado_Area_FK">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FichaMantenimiento_Mantenimiento_FK" Association="Self.FichaMantenimiento_Mantenimiento_FK">
+      <End Role="Mantenimiento" EntitySet="Mantenimiento" />
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACI_Chip_OrdenAtencion_ACI_Chip" Association="Self.FK_ACI_Chip_OrdenAtencion_ACI_Chip">
+      <End Role="ACI_Chip" EntitySet="ACI_Chip" />
+      <End Role="ACI_Chip_OrdenAtencion" EntitySet="ACI_Chip_OrdenAtencion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion" Association="Self.FK_ACI_Chip_OrdenAtencion_ACI_OrdenAtencion">
+      <End Role="ACI_OrdenAtencion" EntitySet="ACI_OrdenAtencion" />
+      <End Role="ACI_Chip_OrdenAtencion" EntitySet="ACI_Chip_OrdenAtencion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASS_116" Association="Self.FK_ASS_116">
+      <End Role="Tecnico" EntitySet="Tecnico" />
+      <End Role="TecnicosxOrdenTrabajo" EntitySet="TecnicosxOrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ASS_117" Association="Self.FK_ASS_117">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+      <End Role="TecnicosxOrdenTrabajo" EntitySet="TecnicosxOrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_cliente_atencion" Association="Self.fk_id_cliente_atencion">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_cliente_pago" Association="Self.fk_id_cliente_pago">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_cartilla_de_atencion" Association="Self.fk_id_det_cartilla_de_atencion">
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_empleado" Association="Self.fk_id_det_empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_empleado_equipo" Association="Self.fk_id_det_empleado_equipo">
+      <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_det_tipo_examen" Association="Self.fk_id_det_tipo_examen">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Detalle_Atencion" EntitySet="Detalle_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_empleado_atencion" Association="Self.fk_id_empleado_atencion">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Cartilla_Atencion" EntitySet="Cartilla_Atencion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_equipo_sede" Association="Self.fk_id_equipo_sede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Equipo_Sede" EntitySet="Equipo_Sede" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_id_comprobante" Association="Self.fk_id_id_comprobante">
+      <End Role="Comprobante_Pago" EntitySet="Comprobante_Pago" />
+      <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_tipo_examen" Association="Self.fk_id_tipo_examen">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Comprobante_Examen" EntitySet="Comprobante_Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrdenTrabajo_EstadoOrdenTrabajo" Association="Self.FK_OrdenTrabajo_EstadoOrdenTrabajo">
+      <End Role="EstadoOrdenTrabajo" EntitySet="EstadoOrdenTrabajo" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_EstadoSolicitud" Association="Self.FK_Solicitud_EstadoSolicitud">
+      <End Role="EstadoSolicitud" EntitySet="EstadoSolicitud" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Sede" Association="Self.FK_Solicitud_Sede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="InformeTecnico_OrdenTrabajo_FK" Association="Self.InformeTecnico_OrdenTrabajo_FK">
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+      <End Role="InformeTecnico" EntitySet="InformeTecnico" />
+    </AssociationSet>
+    <AssociationSet Name="MaterialesxFichaMantenimiento_FichaMantenimiento_FK" Association="Self.MaterialesxFichaMantenimiento_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="MaterialesxFichaMantenimiento" EntitySet="MaterialesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="MaterialesxFichaMantenimiento_Materiales_FK" Association="Self.MaterialesxFichaMantenimiento_Materiales_FK">
+      <End Role="Materiales" EntitySet="Materiales" />
+      <End Role="MaterialesxFichaMantenimiento" EntitySet="MaterialesxFichaMantenimiento" />
+    </AssociationSet>
+    <AssociationSet Name="OrdenTrabajo_FichaMantenimiento_FK" Association="Self.OrdenTrabajo_FichaMantenimiento_FK">
+      <End Role="FichaMantenimiento" EntitySet="FichaMantenimiento" />
+      <End Role="OrdenTrabajo" EntitySet="OrdenTrabajo" />
+    </AssociationSet>
+    <AssociationSet Name="R_1" Association="Self.R_1">
+      <End Role="GPC_Recurso" EntitySet="GPC_Recurso" />
+      <End Role="GPC_DetalleDeSolicitud" EntitySet="GPC_DetalleDeSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_2" Association="Self.R_2">
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+      <End Role="GPC_DetalleDeSolicitud" EntitySet="GPC_DetalleDeSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_3" Association="Self.R_3">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_4" Association="Self.R_4">
+      <End Role="CE_Prioridad" EntitySet="CE_Prioridad" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="R_5" Association="Self.R_5">
+      <End Role="CE_Estado" EntitySet="CE_Estado" />
+      <End Role="GPC_Solicitud" EntitySet="GPC_Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_Area_FK" Association="Self.Solicitud_Area_FK">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_Empleado_FK" Association="Self.Solicitud_Empleado_FK">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_Empleado_FKv1" Association="Self.Solicitud_Empleado_FKv1">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Solicitud_TipoMantenimiento_FK" Association="Self.Solicitud_TipoMantenimiento_FK">
+      <End Role="TipoMantenimiento" EntitySet="TipoMantenimiento" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="Tecnico_Empleado_FK" Association="Self.Tecnico_Empleado_FK">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Tecnico" EntitySet="Tecnico" />
+    </AssociationSet>
+    <AssociationSet Name="Tecnico_Especialidad_FK" Association="Self.Tecnico_Especialidad_FK">
+      <End Role="Especialidad" EntitySet="Especialidad" />
+      <End Role="Tecnico" EntitySet="Tecnico" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

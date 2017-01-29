@@ -1,0 +1,4 @@
+C:\Users\jesus\Source\Workspaces\Área de trabajo\MyFirstProject\PetCenter\PetCenter\Pet\Pet.Entity\bin\Debug\Pet.Entity.dll
+C:\Users\jesus\Source\Workspaces\Área de trabajo\MyFirstProject\PetCenter\PetCenter\Pet\Pet.Entity\bin\Debug\Pet.Entity.pdb
+C:\Users\jesus\Source\Workspaces\Área de trabajo\MyFirstProject\PetCenter\PetCenter\Pet\Pet.Entity\obj\Debug\Pet.Entity.dll
+C:\Users\jesus\Source\Workspaces\Área de trabajo\MyFirstProject\PetCenter\PetCenter\Pet\Pet.Entity\obj\Debug\Pet.Entity.pdb

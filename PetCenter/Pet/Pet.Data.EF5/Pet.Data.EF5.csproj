@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E0CC7E8-F7DB-4B1A-9144-9A9633D37A4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pet.Data.EF5</RootNamespace>
+    <AssemblyName>Pet.Data.EF5</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Chip.cs" />
+    <Compile Include="ChipOrdenAtencion.cs" />
+    <Compile Include="EFData\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\sp_helpdiagrams_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_OT_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_COSULTAR_TECNICO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GET_ORDEN_TRABAJO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GET_TECNICOS_X_ORDEN_TRABAJO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sede.cs" />
+    <Compile Include="EFData\ACI_Chip.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\ACI_Chip_OrdenAtencion.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\ACI_OrdenAtencion.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Actividades.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\ActividadesxFichaMantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Area.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Cartilla_Atencion.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\CE_AprobadorPorArea.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\CE_EmpleadoPorArea.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\CE_Estado.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\CE_Prioridad.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Cliente.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Comprobante_Examen.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Comprobante_Pago.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Detalle_Atencion.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Empleado.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Equipo_Sede.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Especialidad.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\EstadoFichaMantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\EstadoOrdenTrabajo.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\EstadoSolicitud.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Examen.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\FichaMantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\GPC_DetalleDeSolicitud.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\GPC_HistoricoDeSolicitud.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\GPC_Notificador.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\GPC_Recurso.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\GPC_Solicitud.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\InformeTecnico.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Mantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Materiales.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\MaterialesxFichaMantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\OrdenTrabajo.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\PetCenterModelo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCenterModelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\PetCenterModelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\PetCenterModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCenterModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Sede.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Solicitud.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\Tecnico.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\TipoMantenimiento.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_AREA_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_ESTADO_SOLICITUD_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_SEDE_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTAR_TIPO_MANTENIMINETO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTA_ACTIVIDAD_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTA_FICHA_MANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTA_MANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTA_MATERIAL_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_CONSULTA_SOLICITUDES_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GETMANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GETSOLICITUD_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GET_FICHAMANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFData\USP_GET_MATERIALES_X_FICHAMANTENIMIENTO_Result.cs">
+      <DependentUpon>PetCenterModelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="MANTENIMIENTO\FichaMantenimiento.cs" />
+    <Compile Include="MANTENIMIENTO\OrdenTrabajo.cs" />
+    <Compile Include="MANTENIMIENTO\SolicitudMantenimiento.cs" />
+    <Compile Include="Prioridad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recurso.cs" />
+    <Compile Include="Solicitud.cs" />
+    <Compile Include="TipoExamen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EFData\PetCenterModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetCenterModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="EFData\PetCenterModelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PetCenterModelo.Context.cs</LastGenOutput>
+      <DependentUpon>PetCenterModelo.edmx</DependentUpon>
+    </None>
+    <None Include="EFData\PetCenterModelo.edmx.diagram">
+      <DependentUpon>PetCenterModelo.edmx</DependentUpon>
+    </None>
+    <None Include="EFData\PetCenterModelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PetCenterModelo.cs</LastGenOutput>
+      <DependentUpon>PetCenterModelo.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pet.Entity\Pet.Entity.csproj">
+      <Project>{01efe64d-718c-48f4-a42b-b7c1903248af}</Project>
+      <Name>Pet.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

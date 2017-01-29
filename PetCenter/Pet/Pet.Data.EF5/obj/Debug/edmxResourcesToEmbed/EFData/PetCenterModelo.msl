@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PET_DBModelStoreContainer" CdmEntityContainer="PET_DBEntities">
+    <FunctionImportMapping FunctionImportName="USP_CONSULTA_ACTIVIDAD" FunctionName="PET_DBModel.Store.USP_CONSULTA_ACTIVIDAD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTA_ACTIVIDAD_Result">
+          <ScalarProperty Name="CodigoActividad" ColumnName="CodigoActividad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTA_MATERIAL" FunctionName="PET_DBModel.Store.USP_CONSULTA_MATERIAL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTA_MATERIAL_Result">
+          <ScalarProperty Name="CodigoMaterial" ColumnName="CodigoMaterial" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTA_SOLICITUDES" FunctionName="PET_DBModel.Store.USP_CONSULTA_SOLICITUDES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTA_SOLICITUDES_Result">
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="DescripcionSolicitud" ColumnName="DescripcionSolicitud" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="CodigoEstadoSolicitud" ColumnName="CodigoEstadoSolicitud" />
+          <ScalarProperty Name="DescripcionEstadoSolicitud" ColumnName="DescripcionEstadoSolicitud" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="DescripcionSedeSolicitud" ColumnName="DescripcionSedeSolicitud" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="DescripcionAreaSolicitud" ColumnName="DescripcionAreaSolicitud" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="DescripcionTipoMantenimiento" ColumnName="DescripcionTipoMantenimiento" />
+          <ScalarProperty Name="CodigoEmpleadoRegistra" ColumnName="CodigoEmpleadoRegistra" />
+          <ScalarProperty Name="NombreEmpleadoRegistra" ColumnName="NombreEmpleadoRegistra" />
+          <ScalarProperty Name="CodigoEmpleadoAprueba" ColumnName="CodigoEmpleadoAprueba" />
+          <ScalarProperty Name="NombreEmpleadoAprueba" ColumnName="NombreEmpleadoAprueba" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_AREA" FunctionName="PET_DBModel.Store.USP_CONSULTAR_AREA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_AREA_Result">
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_ESTADO_FICHA_MANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoEstadoFichaMantenimiento" ColumnName="CodigoEstadoFichaMantenimiento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_ESTADO_SOLICITUD" FunctionName="PET_DBModel.Store.USP_CONSULTAR_ESTADO_SOLICITUD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_ESTADO_SOLICITUD_Result">
+          <ScalarProperty Name="CodigoEstadoSolicitud" ColumnName="CodigoEstadoSolicitud" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_SEDE" FunctionName="PET_DBModel.Store.USP_CONSULTAR_SEDE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_SEDE_Result">
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_TIPO_MANTENIMINETO" FunctionName="PET_DBModel.Store.USP_CONSULTAR_TIPO_MANTENIMINETO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_TIPO_MANTENIMINETO_Result">
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GET_ACTIVIDADES_X_FICHAMANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoActividadxFichaMantenimiento" ColumnName="CodigoActividadxFichaMantenimiento" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="CodigoActividad" ColumnName="CodigoActividad" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="DescripcionActividad" ColumnName="DescripcionActividad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_FICHAMANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_GET_FICHAMANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GET_FICHAMANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="DescripcionTipoMantenimiento" ColumnName="DescripcionTipoMantenimiento" />
+          <ScalarProperty Name="CodigoEmpleadoAprueba" ColumnName="CodigoEmpleadoAprueba" />
+          <ScalarProperty Name="NombreEmpleadoAprueba" ColumnName="NombreEmpleadoAprueba" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="DescripcionAreaMantenimiento" ColumnName="DescripcionAreaMantenimiento" />
+          <ScalarProperty Name="DescrpcionFichaMantenimiento" ColumnName="DescrpcionFichaMantenimiento" />
+          <ScalarProperty Name="FechaFichaMantenimiento" ColumnName="FechaFichaMantenimiento" />
+          <ScalarProperty Name="FechaInicioFichaMantenimiento" ColumnName="FechaInicioFichaMantenimiento" />
+          <ScalarProperty Name="FechaFinFichaMantenimiento" ColumnName="FechaFinFichaMantenimiento" />
+          <ScalarProperty Name="CantidadTecnicosFichaMantenimiento" ColumnName="CantidadTecnicosFichaMantenimiento" />
+          <ScalarProperty Name="CodigoEstadoFichaMantenimiento" ColumnName="CodigoEstadoFichaMantenimiento" />
+          <ScalarProperty Name="DescrpcionEstadoFichaMantenimiento" ColumnName="DescrpcionEstadoFichaMantenimiento" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="DescripcionSedeMantenimiento" ColumnName="DescripcionSedeMantenimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_MATERIALES_X_FICHAMANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_GET_MATERIALES_X_FICHAMANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GET_MATERIALES_X_FICHAMANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoMaterialxFichaMantenimiento" ColumnName="CodigoMaterialxFichaMantenimiento" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="CodigoMaterial" ColumnName="CodigoMaterial" />
+          <ScalarProperty Name="DescripcionMaterial" ColumnName="DescripcionMaterial" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETMANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_GETMANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GETMANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ACI_Chip">
+      <EntityTypeMapping TypeName="PET_DBModel.ACI_Chip">
+        <MappingFragment StoreEntitySet="ACI_Chip">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nombreChip" ColumnName="nombreChip" />
+          <ScalarProperty Name="idChip" ColumnName="idChip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACI_Chip_OrdenAtencion">
+      <EntityTypeMapping TypeName="PET_DBModel.ACI_Chip_OrdenAtencion">
+        <MappingFragment StoreEntitySet="ACI_Chip_OrdenAtencion">
+          <ScalarProperty Name="idChip" ColumnName="idChip" />
+          <ScalarProperty Name="idOrdenAtencion" ColumnName="idOrdenAtencion" />
+          <ScalarProperty Name="idChipOrdenAtencion" ColumnName="idChipOrdenAtencion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACI_OrdenAtencion">
+      <EntityTypeMapping TypeName="PET_DBModel.ACI_OrdenAtencion">
+        <MappingFragment StoreEntitySet="ACI_OrdenAtencion">
+          <ScalarProperty Name="motivoImplantacion" ColumnName="motivoImplantacion" />
+          <ScalarProperty Name="chipImplantado" ColumnName="chipImplantado" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="fechaOrdenAtencion" ColumnName="fechaOrdenAtencion" />
+          <ScalarProperty Name="estadoAtencion" ColumnName="estadoAtencion" />
+          <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+          <ScalarProperty Name="idOrdenAtencion" ColumnName="idOrdenAtencion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Actividades">
+      <EntityTypeMapping TypeName="PET_DBModel.Actividades">
+        <MappingFragment StoreEntitySet="Actividades">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoActividad" ColumnName="CodigoActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActividadesxFichaMantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.ActividadesxFichaMantenimiento">
+        <MappingFragment StoreEntitySet="ActividadesxFichaMantenimiento">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="CodigoActividad" ColumnName="CodigoActividad" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoActividadxFichaMantenimiento" ColumnName="CodigoActividadxFichaMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="PET_DBModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cartilla_Atencion">
+      <EntityTypeMapping TypeName="PET_DBModel.Cartilla_Atencion">
+        <MappingFragment StoreEntitySet="Cartilla_Atencion">
+          <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+          <ScalarProperty Name="estado_cartilla" ColumnName="estado_cartilla" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_cartilla_atencion" ColumnName="id_cartilla_atencion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CE_AprobadorPorArea">
+      <EntityTypeMapping TypeName="PET_DBModel.CE_AprobadorPorArea">
+        <MappingFragment StoreEntitySet="CE_AprobadorPorArea">
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CE_EmpleadoPorArea">
+      <EntityTypeMapping TypeName="PET_DBModel.CE_EmpleadoPorArea">
+        <MappingFragment StoreEntitySet="CE_EmpleadoPorArea">
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CE_Estado">
+      <EntityTypeMapping TypeName="PET_DBModel.CE_Estado">
+        <MappingFragment StoreEntitySet="CE_Estado">
+          <ScalarProperty Name="descripcion_estado" ColumnName="descripcion_estado" />
+          <ScalarProperty Name="codigo_estado" ColumnName="codigo_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CE_Prioridad">
+      <EntityTypeMapping TypeName="PET_DBModel.CE_Prioridad">
+        <MappingFragment StoreEntitySet="CE_Prioridad">
+          <ScalarProperty Name="descripcion_prioridad" ColumnName="descripcion_prioridad" />
+          <ScalarProperty Name="codigo_prioridad" ColumnName="codigo_prioridad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="PET_DBModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="telefono_casa" ColumnName="telefono_casa" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellido_materno" ColumnName="apellido_materno" />
+          <ScalarProperty Name="apellido_paterno" ColumnName="apellido_paterno" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comprobante_Examen">
+      <EntityTypeMapping TypeName="PET_DBModel.Comprobante_Examen">
+        <MappingFragment StoreEntitySet="Comprobante_Examen">
+          <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+          <ScalarProperty Name="id_comprobante" ColumnName="id_comprobante" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comprobante_Pago">
+      <EntityTypeMapping TypeName="PET_DBModel.Comprobante_Pago">
+        <MappingFragment StoreEntitySet="Comprobante_Pago">
+          <ScalarProperty Name="estado_comprobante" ColumnName="estado_comprobante" />
+          <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
+          <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="monto_total" ColumnName="monto_total" />
+          <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+          <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="id_comprobante" ColumnName="id_comprobante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_Atencion">
+      <EntityTypeMapping TypeName="PET_DBModel.Detalle_Atencion">
+        <MappingFragment StoreEntitySet="Detalle_Atencion">
+          <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+          <ScalarProperty Name="estado_examen_atencion" ColumnName="estado_examen_atencion" />
+          <ScalarProperty Name="especificacion_examen" ColumnName="especificacion_examen" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+          <ScalarProperty Name="id_cartilla_atencion" ColumnName="id_cartilla_atencion" />
+          <ScalarProperty Name="id_detalle" ColumnName="id_detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="PET_DBModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="id_sede" ColumnName="id_sede" />
+          <ScalarProperty Name="id_supervisor" ColumnName="id_supervisor" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="telefono_casa" ColumnName="telefono_casa" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipo_Sede">
+      <EntityTypeMapping TypeName="PET_DBModel.Equipo_Sede">
+        <MappingFragment StoreEntitySet="Equipo_Sede">
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Especialidad">
+      <EntityTypeMapping TypeName="PET_DBModel.Especialidad">
+        <MappingFragment StoreEntitySet="Especialidad">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoEspecialidad" ColumnName="CodigoEspecialidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoFichaMantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.EstadoFichaMantenimiento">
+        <MappingFragment StoreEntitySet="EstadoFichaMantenimiento">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoEstadoFichaMantenimiento" ColumnName="CodigoEstadoFichaMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoOrdenTrabajo">
+      <EntityTypeMapping TypeName="PET_DBModel.EstadoOrdenTrabajo">
+        <MappingFragment StoreEntitySet="EstadoOrdenTrabajo">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoEstadoOrdenTrabajo" ColumnName="CodigoEstadoOrdenTrabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoSolicitud">
+      <EntityTypeMapping TypeName="PET_DBModel.EstadoSolicitud">
+        <MappingFragment StoreEntitySet="EstadoSolicitud">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoEstadoSolicitud" ColumnName="CodigoEstadoSolicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Examen">
+      <EntityTypeMapping TypeName="PET_DBModel.Examen">
+        <MappingFragment StoreEntitySet="Examen">
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="tipo_examen" ColumnName="tipo_examen" />
+          <ScalarProperty Name="id_tipo_examen" ColumnName="id_tipo_examen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FichaMantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.FichaMantenimiento">
+        <MappingFragment StoreEntitySet="FichaMantenimiento">
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CantidadTecnicos" ColumnName="CantidadTecnicos" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformeTecnico">
+      <EntityTypeMapping TypeName="PET_DBModel.InformeTecnico">
+        <MappingFragment StoreEntitySet="InformeTecnico">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+          <ScalarProperty Name="CodigoInformeTecnico" ColumnName="CodigoInformeTecnico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.Mantenimiento">
+        <MappingFragment StoreEntitySet="Mantenimiento">
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materiales">
+      <EntityTypeMapping TypeName="PET_DBModel.Materiales">
+        <MappingFragment StoreEntitySet="Materiales">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoMaterial" ColumnName="CodigoMaterial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialesxFichaMantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.MaterialesxFichaMantenimiento">
+        <MappingFragment StoreEntitySet="MaterialesxFichaMantenimiento">
+          <ScalarProperty Name="CodigoMaterial" ColumnName="CodigoMaterial" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoMaterialxFichaMantenimiento" ColumnName="CodigoMaterialxFichaMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenTrabajo">
+      <EntityTypeMapping TypeName="PET_DBModel.OrdenTrabajo">
+        <MappingFragment StoreEntitySet="OrdenTrabajo">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sede">
+      <EntityTypeMapping TypeName="PET_DBModel.Sede">
+        <MappingFragment StoreEntitySet="Sede">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tecnico">
+      <EntityTypeMapping TypeName="PET_DBModel.Tecnico">
+        <MappingFragment StoreEntitySet="Tecnico">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="CodigoEspecialidad" ColumnName="CodigoEspecialidad" />
+          <ScalarProperty Name="CodigoTecnico" ColumnName="CodigoTecnico" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoMantenimiento">
+      <EntityTypeMapping TypeName="PET_DBModel.TipoMantenimiento">
+        <MappingFragment StoreEntitySet="TipoMantenimiento">
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TecnicosxOrdenTrabajo" TypeName="PET_DBModel.TecnicosxOrdenTrabajo" StoreEntitySet="TecnicosxOrdenTrabajo">
+      <EndProperty Name="OrdenTrabajo">
+        <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+      </EndProperty>
+      <EndProperty Name="Tecnico">
+        <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="GPC_DetalleDeSolicitud">
+      <EntityTypeMapping TypeName="PET_DBModel.GPC_DetalleDeSolicitud">
+        <MappingFragment StoreEntitySet="GPC_DetalleDeSolicitud">
+          <ScalarProperty Name="numero_solicitud" ColumnName="numero_solicitud" />
+          <ScalarProperty Name="codigo_recurso" ColumnName="codigo_recurso" />
+          <ScalarProperty Name="cantidad_atendida" ColumnName="cantidad_atendida" />
+          <ScalarProperty Name="cantidad_aprobada" ColumnName="cantidad_aprobada" />
+          <ScalarProperty Name="cantidad_solicitada" ColumnName="cantidad_solicitada" />
+          <ScalarProperty Name="item" ColumnName="item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GPC_HistoricoDeSolicitud">
+      <EntityTypeMapping TypeName="PET_DBModel.GPC_HistoricoDeSolicitud">
+        <MappingFragment StoreEntitySet="GPC_HistoricoDeSolicitud">
+          <ScalarProperty Name="codigo_estado" ColumnName="codigo_estado" />
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="fecha_operacion" ColumnName="fecha_operacion" />
+          <ScalarProperty Name="numero_solicitud" ColumnName="numero_solicitud" />
+          <ScalarProperty Name="codigo_historia" ColumnName="codigo_historia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GPC_Notificador">
+      <EntityTypeMapping TypeName="PET_DBModel.GPC_Notificador">
+        <MappingFragment StoreEntitySet="GPC_Notificador">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="Para" ColumnName="Para" />
+          <ScalarProperty Name="De" ColumnName="De" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GPC_Recurso">
+      <EntityTypeMapping TypeName="PET_DBModel.GPC_Recurso">
+        <MappingFragment StoreEntitySet="GPC_Recurso">
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="unidad_compra" ColumnName="unidad_compra" />
+          <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+          <ScalarProperty Name="nombre_recurso" ColumnName="nombre_recurso" />
+          <ScalarProperty Name="codigo_recurso" ColumnName="codigo_recurso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GPC_Solicitud">
+      <EntityTypeMapping TypeName="PET_DBModel.GPC_Solicitud">
+        <MappingFragment StoreEntitySet="GPC_Solicitud">
+          <ScalarProperty Name="codigoEmpleado" ColumnName="codigoEmpleado" />
+          <ScalarProperty Name="codigo_aprobador" ColumnName="codigo_aprobador" />
+          <ScalarProperty Name="codigo_solicitud" ColumnName="codigo_solicitud" />
+          <ScalarProperty Name="codigo_estado" ColumnName="codigo_estado" />
+          <ScalarProperty Name="codigo_prioridad" ColumnName="codigo_prioridad" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+          <ScalarProperty Name="numero_solicitud" ColumnName="numero_solicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ActualizaSolicitud" FunctionName="PET_DBModel.Store.ActualizaSolicitud" />
+    <FunctionImportMapping FunctionImportName="aprueba_detalle_solicitud" FunctionName="PET_DBModel.Store.aprueba_detalle_solicitud" />
+    <FunctionImportMapping FunctionImportName="aprueba_rechaza_solicitud" FunctionName="PET_DBModel.Store.aprueba_rechaza_solicitud" />
+    <FunctionImportMapping FunctionImportName="datos_notificacion" FunctionName="PET_DBModel.Store.datos_notificacion" />
+    <FunctionImportMapping FunctionImportName="EliminaSolicitud" FunctionName="PET_DBModel.Store.EliminaSolicitud" />
+    <FunctionImportMapping FunctionImportName="EnviaSolicitud" FunctionName="PET_DBModel.Store.EnviaSolicitud" />
+    <FunctionImportMapping FunctionImportName="Estado_Solicitud" FunctionName="PET_DBModel.Store.Estado_Solicitud" />
+    <FunctionImportMapping FunctionImportName="RegistraDetalleSolicitud" FunctionName="PET_DBModel.Store.RegistraDetalleSolicitud" />
+    <FunctionImportMapping FunctionImportName="RegistraSolicitud" FunctionName="PET_DBModel.Store.RegistraSolicitud" />
+    <EntitySetMapping Name="Solicitud">
+      <EntityTypeMapping TypeName="PET_DBModel.Solicitud">
+        <MappingFragment StoreEntitySet="Solicitud">
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="CodigoEmpleado2" ColumnName="CodigoEmpleado2" />
+          <ScalarProperty Name="CodigoEmpleado1" ColumnName="CodigoEmpleado1" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETSOLICITUD" FunctionName="PET_DBModel.Store.USP_GETSOLICITUD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GETSOLICITUD_Result">
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="DescripcionSolicitud" ColumnName="DescripcionSolicitud" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="CodigoEstadoSolicitud" ColumnName="CodigoEstadoSolicitud" />
+          <ScalarProperty Name="DescripcionEstadoSolicitud" ColumnName="DescripcionEstadoSolicitud" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="DescripcionSedeSolicitud" ColumnName="DescripcionSedeSolicitud" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="DescripcionAreaSolicitud" ColumnName="DescripcionAreaSolicitud" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="DescripcionTipoMantenimiento" ColumnName="DescripcionTipoMantenimiento" />
+          <ScalarProperty Name="CodigoEmpleadoRegistra" ColumnName="CodigoEmpleadoRegistra" />
+          <ScalarProperty Name="NombreEmpleadoRegistra" ColumnName="NombreEmpleadoRegistra" />
+          <ScalarProperty Name="CodigoEmpleadoAprueba" ColumnName="CodigoEmpleadoAprueba" />
+          <ScalarProperty Name="NombreEmpleadoAprueba" ColumnName="NombreEmpleadoAprueba" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTA_MANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_CONSULTA_MANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTA_MANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="DescripcionSolicitud" ColumnName="DescripcionSolicitud" />
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+          <ScalarProperty Name="NombreMantenimiento" ColumnName="NombreMantenimiento" />
+          <ScalarProperty Name="FechaMantenimiento" ColumnName="FechaMantenimiento" />
+          <ScalarProperty Name="DescripcionMantenimiento" ColumnName="DescripcionMantenimiento" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="DescripcionTipoMantenimiento" ColumnName="DescripcionTipoMantenimiento" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="DescripcionAreaMantenimiento" ColumnName="DescripcionAreaMantenimiento" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="DescripcionSedeMantenimiento" ColumnName="DescripcionSedeMantenimiento" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="CodigoEmpleadoRegistra" ColumnName="CodigoEmpleadoRegistra" />
+          <ScalarProperty Name="NombreEmpleadoRegistra" ColumnName="NombreEmpleadoRegistra" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_CONSULTA_FICHA_MANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_CONSULTA_FICHA_MANTENIMIENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTA_FICHA_MANTENIMIENTO_Result">
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="CodigoMantenimiento" ColumnName="CodigoMantenimiento" />
+          <ScalarProperty Name="CodigoSolicitud" ColumnName="CodigoSolicitud" />
+          <ScalarProperty Name="CodigoTipoMantenimiento" ColumnName="CodigoTipoMantenimiento" />
+          <ScalarProperty Name="DescripcionTipoMantenimiento" ColumnName="DescripcionTipoMantenimiento" />
+          <ScalarProperty Name="CodigoEmpleadoAprueba" ColumnName="CodigoEmpleadoAprueba" />
+          <ScalarProperty Name="NombreEmpleadoAprueba" ColumnName="NombreEmpleadoAprueba" />
+          <ScalarProperty Name="CodigoArea" ColumnName="CodigoArea" />
+          <ScalarProperty Name="DescripcionAreaMantenimiento" ColumnName="DescripcionAreaMantenimiento" />
+          <ScalarProperty Name="DescrpcionFichaMantenimiento" ColumnName="DescrpcionFichaMantenimiento" />
+          <ScalarProperty Name="FechaFichaMantenimiento" ColumnName="FechaFichaMantenimiento" />
+          <ScalarProperty Name="FechaInicioFichaMantenimiento" ColumnName="FechaInicioFichaMantenimiento" />
+          <ScalarProperty Name="FechaFinFichaMantenimiento" ColumnName="FechaFinFichaMantenimiento" />
+          <ScalarProperty Name="CantidadTecnicosFichaMantenimiento" ColumnName="CantidadTecnicosFichaMantenimiento" />
+          <ScalarProperty Name="CodigoEstadoFichaMantenimiento" ColumnName="CodigoEstadoFichaMantenimiento" />
+          <ScalarProperty Name="DescrpcionEstadoFichaMantenimiento" ColumnName="DescrpcionEstadoFichaMantenimiento" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="CodigoSede" ColumnName="CodigoSede" />
+          <ScalarProperty Name="DescripcionSedeMantenimiento" ColumnName="DescripcionSedeMantenimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_FICHA_MANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_REGISTRAR_FICHA_MANTENIMIENTO" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PET_DBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PET_DBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PET_DBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PET_DBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PET_DBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PET_DBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="PET_DBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_ACTIVIDAD_X_FICHA1" FunctionName="PET_DBModel.Store.USP_REGISTRAR_ACTIVIDAD_X_FICHA" />
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_MATERIAL_X_FICHA1" FunctionName="PET_DBModel.Store.USP_REGISTRAR_MATERIAL_X_FICHA" />
+    <FunctionImportMapping FunctionImportName="USP_COSULTAR_TECNICO" FunctionName="PET_DBModel.Store.USP_COSULTAR_TECNICO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_COSULTAR_TECNICO_Result">
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_ORDEN_TRABAJO" FunctionName="PET_DBModel.Store.USP_GET_ORDEN_TRABAJO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GET_ORDEN_TRABAJO_Result">
+          <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+          <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_TECNICOS_X_ORDEN_TRABAJO" FunctionName="PET_DBModel.Store.USP_GET_TECNICOS_X_ORDEN_TRABAJO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_GET_TECNICOS_X_ORDEN_TRABAJO_Result">
+          <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+          <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+          <ScalarProperty Name="NOMBRES_APELLIDOS" ColumnName="NOMBRES_APELLIDOS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_ORDEN_TRABAJO1" FunctionName="PET_DBModel.Store.USP_REGISTRAR_ORDEN_TRABAJO" />
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_TECNICOS_X_OT" FunctionName="PET_DBModel.Store.USP_REGISTRAR_TECNICOS_X_OT" />
+    <FunctionImportMapping FunctionImportName="USP_CONSULTAR_OT" FunctionName="PET_DBModel.Store.USP_CONSULTAR_OT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PET_DBModel.USP_CONSULTAR_OT_Result">
+          <ScalarProperty Name="CodigoOrdenTrabajo" ColumnName="CodigoOrdenTrabajo" />
+          <ScalarProperty Name="CodigoFichaMantenimiento" ColumnName="CodigoFichaMantenimiento" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaHoraCreacion" ColumnName="FechaHoraCreacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+          <ScalarProperty Name="FechaHoraActualizacion" ColumnName="FechaHoraActualizacion" />
+          <ScalarProperty Name="EstadoRegistro" ColumnName="EstadoRegistro" />
+          <ScalarProperty Name="NombreSede" ColumnName="NombreSede" />
+          <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_SOLICITUD" FunctionName="PET_DBModel.Store.USP_REGISTRAR_SOLICITUD" />
+    <FunctionImportMapping FunctionImportName="USP_REGISTRAR_MANTENIMIENTO" FunctionName="PET_DBModel.Store.USP_REGISTRAR_MANTENIMIENTO" />
+  </EntityContainerMapping>
+</Mapping>

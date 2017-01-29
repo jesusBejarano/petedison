@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Pet Center - Gestion de Exámenes de Laboratorio, Rayos X y Otros</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+        <link href="css/jquery-ui.css" rel="stylesheet" />
+       
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+        <input type="hidden" id="idComprobante" value="" />       
+        <input type="hidden" id="idCliente" value="" />       
+        <input type="hidden" id="idPaciente" value="" />       
+		<div id="header">
+			<div class="logo-group">
+				<span class="logo"> <img src="img/petcenter.png"> </span>
+				<span class="nombre-sistema"> </span>
+			</div>
+			<div class="user-group">
+				<div id="logout" class="btn-header salir">
+					<span> <a href="login.html" title="Cerrar sesión"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<div class="usuario hidden-xs text-right">
+					<div class="usuario-nombre">Johan Muñoz</div>
+					<div class="cargo">Administrador</div>
+				</div>
+			</div>
+		</div>
+
+        @Html.Partial("/Views/Shared/_Cabecera.cshtml")
+
+        <div class="table-responsive">
+          BIENBENIDOS AL SISTEMA
+        </div>
+
+        <script src="js/external/jquery/jquery.js"></script>
+        <link href="Scripts/jquery-ui.min.css" rel="stylesheet" />
+        <script src="Scripts/jquery-ui.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootswatch.js"></script>
+
+
+        <!-- JQgrid -->
+        <link type="text/css" href="css/JQGrid/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+        <link type="text/css" href="css/JQGrid/ui.jqgrid.css" rel="stylesheet" />
+
+        <script type="text/javascript" src="js/JQGrid/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="js/JQGrid/jquery-ui-1.9.2.custom.js"></script>
+        <script type="text/javascript" src="js/JQGrid/grid.locale-en.js"></script>
+        <script type="text/javascript" src="js/JQGrid/jquery.jqGrid.min.js"></script>
+
+        <!-- Mensajes Alerta -->
+        <script type="text/javascript" src="js/alertify.js"></script>
+		<link rel="stylesheet" href="css/alertify.core.css" />
+		<link rel="stylesheet" href="css/alertify.default.css" />
+
+        <script type="text/javascript">
+            function editar(id) {
+                // alert(id);
+                //ocument.getElementById("txtEditar").value(id);
+                // $(editarSolicitud(id));
+            }
+            $(document).ready(function () {
+
+                $(function () {
+
+                });
+
+            });
+
+
+
+        </script>
+	</body>
+</html>
+
+
+
+<style>
+    /*Adding some css for looks good*/
+    span.error {
+        display: block;
+        visibility: hidden;
+        color: red;
+        font-size: 90%;
+    }
+
+
+    /*css for table*/
+    .container td {
+        vertical-align: top;
+    }
+
+    .tablecontainer table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 1px solid #BFAEAE;
+        border-right: 1px solid #BFAEAE;
+    }
+
+    .tablecontainer th {
+        border-bottom: 2px solid #BFAEAE !important;
+    }
+
+    .tablecontainer th, .tablecontainer td {
+        text-align: left;
+        border-left: 1px solid #BFAEAE;
+        padding: 5px;
+        border-bottom: 1px solid #BFAEAE;
+    }
+
+    .ui-widget {
+        font-size: 12px !important;
+    }
+
+</style>

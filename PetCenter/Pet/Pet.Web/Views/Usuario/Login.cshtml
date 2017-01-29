@@ -1,0 +1,53 @@
+﻿@model Pet.Entity.GS_Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Acceso de Usuarios</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>    
+    }
+    
+    
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a=>a.nombre_usuario)</td>
+            <td>@Html.TextBoxFor(a=>a.nombre_usuario)</td>
+            <td>@Html.ValidationMessageFor(a=>a.nombre_usuario)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a=>a.clave_usuario)
+            </td>
+            <td>
+                @Html.PasswordFor(a=>a.clave_usuario)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a=>a.clave_usuario)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+
+@* Esta línea e para crear javascript *@
+
+@section Scripts{
+    @Scripts.Render("")
+}
